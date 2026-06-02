@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomas Lai — Electronic Press Kit</title>
+<meta name="description" content="Thomas Lai — Taiwanese-Canadian singer-songwriter from Montreal making theatrical, maximalist pop rock. Debut single 'Ferris Wheel Romance' out now.">
+
+<!-- ============================================================
+     SOCIAL SHARE PREVIEW (Open Graph) — optional.
+     Swap in a 1200x630 banner (a sky shot works great) when ready.
+     ============================================================ -->
+<meta property="og:title" content="Thomas Lai — Press Kit">
+<meta property="og:description" content="Taiwanese-Canadian singer-songwriter from Montreal. Debut single 'Ferris Wheel Romance' out now.">
+<meta property="og:type" content="profile">
+<!-- <meta property="og:image" content="images/og-image.jpg"> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --sky-pale:#E9F3FB;   /* page background */
+    --sky-soft:#D7E9F7;   /* deeper panels   */
+    --sky-mid:#AFD4F0;
+    --sky:#4FA0DE;        /* bright accent   */
+    --sky-deep:#235E96;
+    --ink:#13304A;        /* navy text       */
+    --ink-soft:#46627A;
+    --ink-faint:#88A4BA;
+    --sun:#F4A659;        /* single warm accent — golden hour */
+    --line:#CBE2F3;
+    --cloud:#FFFFFF;
+    --navy:#0E2438;       /* deep contact bg */
+    --shadow:rgba(28,68,110,.18);
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--sky-pale);
+    color:var(--ink);
+    font-family:'Hanken Grotesk',system-ui,sans-serif;
+    font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+
+  /* atmosphere + grain */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(120% 80% at 85% -10%, rgba(79,160,222,.20), transparent 55%),
+      radial-gradient(90% 60% at 0% 0%, rgba(175,212,240,.30), transparent 55%),
+      radial-gradient(120% 90% at 50% 120%, rgba(244,166,89,.10), transparent 60%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.45;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+  }
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  h1,h2,h3,.display,.mark{font-family:'Syne',sans-serif}
+  .eyebrow{
+    font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--sky-deep);
+  }
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------------- HERO ---------------- */
+  .hero-shell{position:relative;overflow:hidden}
+  /* HIS SKY PHOTO sits behind the hero; the gradient keeps text legible.
+     Falls back to a clean blue gradient if no photo is added yet. */
+  .hero-bg{
+    position:absolute;inset:0;z-index:0;
+    background:
+      linear-gradient(100deg, var(--sky-pale) 30%, rgba(233,243,251,.55) 58%, rgba(233,243,251,.15) 100%),
+      linear-gradient(180deg, var(--sky-mid), var(--sky-soft)),
+      url("images/sky-hero.jpg");
+    background-size:cover,cover,cover;
+    background-position:center,center,center;
+  }
+  header{position:relative;z-index:1;padding:48px 0 30px}
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .mark{font-weight:700;font-size:1.05rem;letter-spacing:.01em}
+  .mapl{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1.5px dashed var(--sky-deep);color:var(--sky-deep);
+    padding:6px 12px;border-radius:3px;
+    font-family:'Syne',sans-serif;font-size:.64rem;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;transform:rotate(-2deg);
+    background:rgba(79,160,222,.07);
+  }
+
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:30px 0 70px}
+  .hero-copy h1{
+    font-size:clamp(3rem,8.5vw,6.4rem);font-weight:800;line-height:.92;
+    letter-spacing:-.025em;margin:14px 0 0;color:var(--ink);
+  }
+  .hero-copy h1 em{font-style:normal;color:var(--sky-deep)}
+  .oneliner{font-size:clamp(1.05rem,2.1vw,1.32rem);color:var(--ink-soft);max-width:30ch;margin-top:22px;line-height:1.45;font-weight:500}
+  .loc{margin-top:20px;font-family:'Syne',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sky-deep);font-weight:700}
+  .loc::before{content:"☁  ";color:var(--sky)}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+
+  .postcard{
+    position:relative;background:#fff;padding:14px 14px 44px;border-radius:4px;
+    box-shadow:0 24px 54px -20px var(--shadow);transform:rotate(2.2deg);transition:transform .5s ease;
+  }
+  .postcard:hover{transform:rotate(0) scale(1.012)}
+  .postcard img{width:100%;display:block;border-radius:2px;aspect-ratio:4/5;object-fit:cover;background:var(--sky-soft)}
+  .postcard .cap{position:absolute;left:18px;bottom:14px;font-family:'Syne',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .postcard .stamp{
+    position:absolute;top:-14px;right:-12px;width:62px;height:74px;
+    background:var(--sky-soft);border:2px solid #fff;border-radius:3px;
+    box-shadow:0 8px 18px -6px var(--shadow);transform:rotate(8deg);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-family:'Syne',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.1em;
+    line-height:1.3;color:var(--sky-deep);padding:6px;
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:40px;
+    font-family:'Syne',sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;
+    border:1.5px solid var(--ink);transition:transform .25s ease,background .25s ease,color .25s ease,border-color .25s ease;
+  }
+  .btn-solid{background:var(--ink);color:var(--sky-pale)}
+  .btn-solid:hover{background:var(--sky-deep);border-color:var(--sky-deep);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--sky-pale);transform:translateY(-2px)}
+
+  /* ---------------- FULL-WIDTH SKY BAND (his photo) ---------------- */
+  .skyband{
+    position:relative;height:40vh;min-height:280px;z-index:1;
+    background:linear-gradient(180deg, rgba(35,94,150,.12), rgba(14,36,56,.28)), var(--sky-mid);
+    background-size:cover;background-position:center 60%;
+    display:flex;align-items:flex-end;
+  }
+  /* When you add the photo, this overlays it on top of the gradient: */
+  .skyband.has-photo{background-image:linear-gradient(180deg, rgba(35,94,150,.10), rgba(14,36,56,.34)), url("images/sky-band.jpg")}
+  .skyband .credit{
+    position:relative;max-width:var(--maxw);margin:0 auto;width:100%;padding:0 28px 26px;
+    font-family:'Syne',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.18em;
+    text-transform:uppercase;color:#fff;text-shadow:0 1px 12px rgba(14,36,56,.5);
+  }
+
+  /* ---------------- SECTION SHELL ---------------- */
+  section{padding:62px 0}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:34px}
+  .sec-head h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700;letter-spacing:-.015em}
+  .rule{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 16px)}
+
+  /* LISTEN */
+  .listen-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+  .now{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:600;line-height:1.3}
+  .now b{color:var(--sky-deep)}
+  .now .sub{display:block;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.05em;color:var(--ink-faint);margin-top:10px;text-transform:uppercase}
+  .spotify-embed{border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -22px var(--shadow);min-height:152px;background:var(--cloud)}
+  .embed-placeholder{border:1.5px dashed var(--line);border-radius:14px;padding:28px;text-align:center;color:var(--ink-faint);font-size:.85rem;background:var(--cloud)}
+  .streams{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+  .about .portrait{background:#fff;padding:12px;border-radius:4px;box-shadow:0 22px 50px -22px var(--shadow);transform:rotate(-1.6deg)}
+  .about .portrait img{width:100%;display:block;border-radius:2px;aspect-ratio:3/4;object-fit:cover;background:var(--sky-soft)}
+  .bio p{margin-bottom:18px;color:var(--ink-soft)}
+  .bio p:first-child{font-family:'Syne',sans-serif;font-size:1.4rem;line-height:1.35;color:var(--ink);font-weight:600}
+  .bio .more{max-height:0;overflow:hidden;transition:max-height .7s ease}
+  .bio .more.open{max-height:1000px}
+  .readmore{background:none;border:none;cursor:pointer;color:var(--sky-deep);font-family:'Syne',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:4px 0;border-bottom:1.5px solid var(--sky)}
+
+  /* LIVE */
+  .live-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .live-grid figure{background:#fff;padding:12px 12px 36px;border-radius:4px;box-shadow:0 20px 48px -24px var(--shadow);position:relative}
+  .live-grid figure:nth-child(odd){transform:rotate(-1.3deg)}
+  .live-grid figure:nth-child(even){transform:rotate(1.4deg)}
+  .live-grid img{width:100%;display:block;border-radius:2px;aspect-ratio:3/2;object-fit:cover;background:var(--sky-soft)}
+  .live-grid figcaption{position:absolute;bottom:12px;left:16px;font-family:'Syne',sans-serif;font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* PRESS */
+  .press-empty{border:1.5px dashed var(--line);border-radius:14px;padding:42px;text-align:center;background:var(--cloud)}
+  .press-empty .q{font-family:'Syne',sans-serif;font-weight:600;font-size:1.25rem;color:var(--ink-faint)}
+  .press-empty .n{font-size:.82rem;color:var(--ink-faint);margin-top:10px}
+
+  /* CONTACT */
+  .contact{background:var(--navy);color:var(--sky-pale);border-radius:18px;padding:54px 44px;position:relative;overflow:hidden}
+  .contact::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 120% at 90% 0%,rgba(79,160,222,.40),transparent 55%),radial-gradient(70% 100% at 0% 100%,rgba(244,166,89,.20),transparent 55%);pointer-events:none}
+  .contact .inner{position:relative;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+  .contact h2{color:var(--sky-pale);font-size:clamp(1.8rem,4vw,2.7rem);font-weight:700;line-height:1.1}
+  .contact a.email{color:#fff;font-family:'Syne',sans-serif;font-weight:600;font-size:clamp(1.2rem,3vw,1.7rem);text-decoration:none;border-bottom:2px solid var(--sun)}
+  .contact a.email:hover{color:var(--sun)}
+  .avail{margin-top:18px;font-size:.9rem;color:rgba(233,243,251,.74);max-width:44ch}
+  .socials{display:flex;flex-direction:column;gap:12px}
+  .socials a{color:var(--sky-pale);text-decoration:none;font-family:'Syne',sans-serif;font-weight:600;font-size:.92rem;display:flex;align-items:center;gap:10px;opacity:.86;transition:opacity .2s,transform .2s,color .2s}
+  .socials a:hover{opacity:1;transform:translateX(3px);color:var(--sun)}
+  .socials span{color:var(--sky);font-size:.66rem;letter-spacing:.08em}
+
+  footer{padding:40px 0 60px;text-align:center;color:var(--ink-faint);font-size:.82rem}
+  footer .fmark{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--ink-soft);letter-spacing:.02em}
+
+  @media(max-width:820px){
+    .hero{grid-template-columns:1fr;gap:38px}
+    .postcard{max-width:340px;margin:0 auto}
+    .listen-grid{grid-template-columns:1fr;gap:26px}
+    .about{grid-template-columns:1fr;gap:30px}
+    .about .portrait{max-width:300px}
+    .live-grid{grid-template-columns:1fr}
+    .contact .inner{grid-template-columns:1fr;gap:30px}
+    .contact{padding:40px 26px}
+  }
+  @media(max-width:480px){
+    body{font-size:16px}
+    .wrap{padding:0 20px}
+    header{padding:30px 0 14px}
+    .hero-cta{flex-direction:column;align-items:stretch}
+    .btn{justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<div class="hero-shell">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <header>
+      <div class="topbar">
+        <div class="mark">Thomas&nbsp;Lai</div>
+        <!-- CanCon designation — radio MDs look for this first. MALP = recorded in Montreal. -->
+        <div class="mapl" title="Canadian content: Music, Artist, Lyrics, Performance">CanCon · MALP</div>
+      </div>
+
+      <div class="hero">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Electronic Press Kit</span>
+          <h1>Thomas&nbsp;<em>Lai</em></h1>
+          <p class="oneliner">Taiwanese-Canadian singer-songwriter making theatrical, maximalist pop rock.</p>
+          <p class="loc">Montréal, Québec</p>
+          <div class="hero-cta">
+            <a class="btn btn-solid" href="#listen">Listen</a>
+            <a class="btn btn-ghost" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="postcard">
+            <!-- PHOTO 1 — your main profile portrait (vertical). images/hero.jpg -->
+            <img src="images/hero.jpg" alt="Thomas Lai">
+            <span class="cap">Ferris Wheel Romance — 2026</span>
+            <div class="stamp">PAR<br>AVION</div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+
+<!-- ================= SKY BAND (your photography) =================
+     Add images/sky-band.jpg and then change class to "skyband has-photo"
+     to show it. Until then it shows a clean blue gradient. -->
+<div class="skyband">
+  <div class="credit">Skies over Montréal — photographs by Thomas Lai</div>
+</div>
+
+<div class="wrap">
+
+  <!-- ================= LISTEN ================= -->
+  <section id="listen">
+    <div class="sec-head reveal"><h2>Listen</h2><div class="rule"></div></div>
+    <div class="listen-grid">
+      <div class="reveal">
+        <p class="now"><b>"Ferris Wheel Romance"</b> — out now.
+          <span class="sub">Debut single · April 17, 2026 · Recorded in Montreal</span>
+        </p>
+        <div class="streams">
+          <a class="btn btn-ghost" href="https://music.apple.com/us/artist/thomas-lai/1889020506" target="_blank" rel="noopener">Apple Music</a>
+          <a class="btn btn-ghost" href="https://www.youtube.com/@thomaslaimusic" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <!-- ===== SPOTIFY EMBED =====
+             Replace TRACK_ID with your track id (Spotify → Share → Embed track),
+             delete the placeholder div, and uncomment the iframe. -->
+        <!--
+        <div class="spotify-embed">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/TRACK_ID?utm_source=generator"
+            width="100%" height="352" frameBorder="0" allowfullscreen=""
+            allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+        -->
+        <div class="embed-placeholder">▸ Spotify player goes here — paste your track embed (see code comment)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="sec-head reveal"><h2>About</h2><div class="rule"></div></div>
+    <div class="about">
+      <div class="portrait reveal">
+        <!-- PHOTO 2 — your zoomed-out / environmental shot. images/portrait.jpg -->
+        <img src="images/portrait.jpg" alt="Thomas Lai portrait">
+      </div>
+      <div class="bio reveal">
+        <p>Thomas Lai writes songs that refuse to pick a lane — and that's the point.</p>
+        <p>A Taiwanese-Canadian singer-songwriter based in Montreal, Thomas grew up with the piano and violin lessons the stereotype would predict — with one difference: nobody made him take them. He asked. By thirteen he had moved past playing other people's music to writing and producing his own, and he hasn't stopped since.</p>
+        <div class="more" id="moreBio">
+          <p>What emerged is a singer-songwriter's sensibility wired into maximalist, theatrical production. His lyrics are personal and tightly structured; the music around them blends pop rock, musical theatre, orchestral arrangement, electronic textures, and the occasional turn toward R&amp;B. It lands in the lane of Jake Wesley Rogers and Conan Gray, with a theatrical streak traceable back through Panic! at the Disco and Mika — singer-songwriter material carrying the production ambition of an arena.</p>
+          <p>His debut single "Ferris Wheel Romance," recorded in Montreal and released April 17, 2026, marks the beginning of his independent artist journey. A sped-up version arrives in June, followed by a slowed version and the song's first music video in July, with a follow-up single planned for the fall.</p>
+        </div>
+        <button class="readmore" id="readBtn" aria-expanded="false">Read more</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LIVE ================= -->
+  <section id="live">
+    <div class="sec-head reveal"><h2>On stage</h2><div class="rule"></div></div>
+    <div class="live-grid">
+      <figure class="reveal">
+        <!-- PHOTO 3 — performance shot #1. images/live-1.jpg -->
+        <img src="images/live-1.jpg" alt="Thomas Lai performing live">
+        <figcaption>Live in Montreal</figcaption>
+      </figure>
+      <figure class="reveal">
+        <!-- PHOTO 4 — performance shot #2. images/live-2.jpg -->
+        <img src="images/live-2.jpg" alt="Thomas Lai performing live">
+        <figcaption>Live in Montreal</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= PRESS ================= -->
+  <section id="press">
+    <div class="sec-head reveal"><h2>Press</h2><div class="rule"></div></div>
+    <div class="press-empty reveal">
+      <p class="q">"…"</p>
+      <p class="n">Selected press and playlist features will appear here as they land.</p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <div class="contact reveal">
+      <div class="inner">
+        <div>
+          <span class="eyebrow" style="color:var(--sun)">Get in touch</span>
+          <h2>For press, radio, sync &amp; booking.</h2>
+          <p style="margin-top:18px"><a class="email" href="mailto:thomaslaimusic@gmail.com">thomaslaimusic@gmail.com</a></p>
+          <p class="avail">High-resolution photos, WAV files, instrumental and a cappella versions available on request. CanCon designation: MALP.</p>
+        </div>
+        <nav class="socials">
+          <a href="https://www.instagram.com/thomaslaimusic" target="_blank" rel="noopener"><span>IG</span> Instagram</a>
+          <a href="https://www.tiktok.com/@thomaslaimusic" target="_blank" rel="noopener"><span>TT</span> TikTok</a>
+          <a href="https://www.youtube.com/@thomaslaimusic" target="_blank" rel="noopener"><span>YT</span> YouTube</a>
+          <a href="https://music.apple.com/us/artist/thomas-lai/1889020506" target="_blank" rel="noopener"><span>AM</span> Apple Music</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="fmark">Thomas Lai</div>
+  <p style="margin-top:8px">Montréal · © 2026 · All rights reserved</p>
+</footer>
+
+<script>
+  (function(){
+    var btn=document.getElementById('readBtn'),more=document.getElementById('moreBio');
+    if(btn&&more){btn.addEventListener('click',function(){
+      var open=more.classList.toggle('open');
+      btn.textContent=open?'Read less':'Read more';
+      btn.setAttribute('aria-expanded',open);
+    });}
+  })();
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.14});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+
+</body>
+</html>
