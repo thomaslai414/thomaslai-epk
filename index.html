@@ -43,13 +43,6 @@
        ──────────────────────────────────────────────────────────── */
     --name-font:'Space Grotesk', sans-serif;
     --lyric-font:'Caveat', cursive;
-
-    /* airmail stripe used on every postcard border */
-    --airmail:repeating-linear-gradient(-45deg,
-        var(--sky-deep) 0 10px,
-        #ffffff 10px 19px,
-        var(--sun) 19px 29px,
-        #ffffff 29px 38px);
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
@@ -107,16 +100,13 @@
      POSTCARD CARD — now framed with a real AIRMAIL striped border
      ============================================================ */
   .card{
-    position:relative;background:var(--cloud);border-radius:3px;
-    padding:40px 40px;box-shadow:var(--card-shadow);
-    /* airmail diagonal stripe border */
-    border:9px solid var(--sky-deep);
-    border-image:var(--airmail) 9;
+    position:relative;background:var(--cloud);border-radius:7px;
+    padding:34px 36px;box-shadow:var(--card-shadow);
   }
-  /* bolder dashed inner postcard frame, concentric inside the stripe */
+  /* bolder dashed inner postcard frame */
   .card::before{
     content:"";position:absolute;inset:12px;border:2px dashed var(--sky-mid);
-    border-radius:3px;pointer-events:none;
+    border-radius:4px;pointer-events:none;
   }
   .card > *{position:relative;z-index:1}
 
@@ -149,7 +139,7 @@
 
   .hero{display:grid;grid-template-columns:1.12fr .88fr;gap:46px;align-items:center;padding:26px 0 78px}
 
-  .hero-card{padding:44px 40px 46px}
+  .hero-card{padding:40px 40px 44px}
   .hero-copy h1{
     font-size:clamp(2.6rem,9vw,5.4rem);font-weight:700;line-height:.94;
     letter-spacing:-.02em;margin:14px 0 0;color:var(--ink);overflow-wrap:break-word;
@@ -160,11 +150,10 @@
   .loc::before{content:"☁  ";color:var(--sky)}
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 
-  /* photo postcards also get a thin airmail edge for cohesion */
+  /* photo postcards */
   .postcard{
-    position:relative;background:#fff;padding:14px 14px 44px;border-radius:3px;
+    position:relative;background:#fff;padding:14px 14px 44px;border-radius:4px;
     box-shadow:var(--card-shadow);transform:rotate(2.2deg);transition:transform .5s ease;
-    border:6px solid var(--sky-deep);border-image:var(--airmail) 6;
   }
   .postcard:hover{transform:rotate(0) scale(1.012)}
   .postcard img{width:100%;display:block;border-radius:2px;aspect-ratio:4/5;object-fit:cover;background:var(--sky-soft)}
@@ -220,7 +209,7 @@
 
   /* ABOUT */
   .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}
-  .about .portrait{background:#fff;padding:12px;border-radius:3px;box-shadow:var(--card-shadow);transform:rotate(-1.6deg);border:6px solid var(--sky-deep);border-image:var(--airmail) 6}
+  .about .portrait{background:#fff;padding:12px;border-radius:4px;box-shadow:var(--card-shadow);transform:rotate(-1.6deg)}
   .about .portrait img{width:100%;display:block;border-radius:2px;aspect-ratio:3/4;object-fit:cover;background:var(--sky-soft)}
   .bio p{margin-bottom:18px;color:var(--ink-soft)}
   .bio p:first-child{font-family:'Syne',sans-serif;font-size:1.35rem;line-height:1.35;color:var(--ink);font-weight:600}
@@ -230,7 +219,7 @@
 
   /* LIVE */
   .live-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-  .live-grid figure{background:#fff;padding:12px 12px 36px;border-radius:3px;box-shadow:var(--card-shadow);position:relative;border:6px solid var(--sky-deep);border-image:var(--airmail) 6}
+  .live-grid figure{background:#fff;padding:12px 12px 36px;border-radius:4px;box-shadow:var(--card-shadow);position:relative}
   .live-grid figure:nth-child(odd){transform:rotate(-1.3deg)}
   .live-grid figure:nth-child(even){transform:rotate(1.4deg)}
   .live-grid img{width:100%;height:auto;display:block;border-radius:2px;background:var(--sky-soft)}
@@ -244,9 +233,8 @@
   /* CONTACT — dark "night" postcard sitting on the rainbow sky */
   .contact{
     background:linear-gradient(135deg, rgba(14,36,56,.95), rgba(20,52,82,.90));
-    color:var(--sky-pale);border-radius:3px;padding:54px 44px;position:relative;overflow:hidden;
+    color:var(--sky-pale);border-radius:7px;padding:54px 44px;position:relative;overflow:hidden;
     box-shadow:var(--card-shadow);
-    border:9px solid var(--sky-deep);border-image:var(--airmail) 9;
   }
   .contact::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 120% at 90% 0%,rgba(79,160,222,.32),transparent 55%),radial-gradient(70% 100% at 0% 100%,rgba(244,166,89,.20),transparent 55%);pointer-events:none}
   .contact::after{content:"";position:absolute;inset:12px;border:2px dashed rgba(207,226,243,.34);border-radius:3px;pointer-events:none}
@@ -279,13 +267,13 @@
     .live-grid figure{max-width:440px;margin:0 auto}
     .contact .inner{grid-template-columns:1fr;gap:30px}
     .contact{padding:40px 26px}
-    .card{padding:34px 28px}
+    .card{padding:28px 26px}
   }
   @media(max-width:480px){
     body{font-size:16px}
     .wrap{padding:0 18px}
     header{padding:26px 0 10px}
-    .card{padding:28px 22px;border-width:7px;border-image:var(--airmail) 7}
+    .card{padding:28px 22px}
     .card::before{inset:9px}
     .hero-card{padding:30px 24px 32px}
     .hero-copy h1{font-size:clamp(2.3rem,12vw,3.6rem)}
@@ -295,7 +283,7 @@
     .hero-cta{flex-direction:column;align-items:stretch}
     .btn{justify-content:center}
     .lyric{padding:34px 10px}
-    .contact{padding:32px 22px;border-width:7px;border-image:var(--airmail) 7}
+    .contact{padding:32px 22px}
   }
 </style>
 </head>
