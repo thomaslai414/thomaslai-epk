@@ -13,8 +13,6 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Syne + Hanken Grotesk kept for headings/body. Added: Space Grotesk (artist name),
-     Instrument Serif (alt name option), Caveat (handwritten skywriting lyrics). -->
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -29,18 +27,12 @@
     --ink-faint:#88A4BA;
     --sun:#F4A659;
     --line:#CBE2F3;
-    --cloud:#FFFDF7;          /* warm postcard stock */
+    --cloud:#FFFDF7;
     --navy:#0E2438;
     --shadow:rgba(28,68,110,.18);
     --card-shadow:0 34px 70px -34px rgba(14,36,56,.62), 0 6px 18px -10px rgba(14,36,56,.30);
     --maxw:1080px;
 
-    /* ── ARTIST NAME FONT ───────────────────────────────────────────
-       Swap the line below to restyle "Thomas Lai" everywhere at once:
-         'Space Grotesk'    → clean modern wordmark (current)
-         'Instrument Serif' → elegant, signature-like serif
-         'Syne'             → the original (loud / display)
-       ──────────────────────────────────────────────────────────── */
     --name-font:'Space Grotesk', sans-serif;
     --lyric-font:'Caveat', cursive;
   }
@@ -55,7 +47,6 @@
     overflow-x:hidden;width:100%;
   }
 
-  /* film-grain overlay sits above everything for postcard texture */
   body::after{
     content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
@@ -65,22 +56,12 @@
   .wrap{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 28px;width:100%}
 
   h1,h2,h3,.display{font-family:'Syne',sans-serif}
-  /* artist-name wordmarks use the simpler name font */
   .mark,.fmark,.hero-copy h1{font-family:var(--name-font)}
   .eyebrow{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--sky-deep)}
 
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
   .reveal.in{opacity:1;transform:none}
 
-  /* ============================================================
-     SKY ZONES — each photo fills the full backdrop, fixed.
-     Order swapped + middle split into TWO zones so no single
-     image stretches across the whole long band.
-       Zone 1 (hero) ....... sky-band.jpeg
-       Zone 2 (listen+about) sky-hero.jpeg
-       Zone 3 (live+press) . sky-band.jpeg  (reintroduced → 4 blocks)
-       Zone 4 (contact) .... rainbow_in_sky.jpg
-     ============================================================ */
   .sky-zone{position:relative;z-index:1;background-size:cover;background-position:center;background-attachment:fixed}
   .sky-zone::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none}
 
@@ -96,21 +77,16 @@
   .zone-contact{background-image:url("images/rainbow_in_sky.jpg")}
   .zone-contact::before{background:linear-gradient(180deg, rgba(14,36,56,.10), rgba(14,36,56,.42))}
 
-  /* ============================================================
-     POSTCARD CARD — now framed with a real AIRMAIL striped border
-     ============================================================ */
   .card{
     position:relative;background:var(--cloud);border-radius:7px;
     padding:34px 36px;box-shadow:var(--card-shadow);
   }
-  /* bolder dashed inner postcard frame */
   .card::before{
     content:"";position:absolute;inset:12px;border:2px dashed var(--sky-mid);
     border-radius:4px;pointer-events:none;
   }
   .card > *{position:relative;z-index:1}
 
-  /* postmark accent (round rubber-stamp), used on a few cards */
   .postmark{
     position:absolute;top:-20px;right:18px;z-index:3;width:74px;height:74px;border-radius:50%;
     border:2px dashed var(--sky-deep);color:var(--sky-deep);background:rgba(233,243,251,.94);
@@ -150,7 +126,6 @@
   .loc::before{content:"☁  ";color:var(--sky)}
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 
-  /* photo postcards */
   .postcard{
     position:relative;background:#fff;padding:14px 14px 44px;border-radius:4px;
     box-shadow:var(--card-shadow);transform:rotate(2.2deg);transition:transform .5s ease;
@@ -180,7 +155,9 @@
   .lyric{
     position:relative;z-index:2;text-align:center;
     font-family:var(--lyric-font);font-weight:600;
-    font-size:clamp(1.7rem,5.2vw,3.5rem);line-height:1.18;
+    /* FIX 1: max capped at 2.1rem so short lines stay on one line on desktop */
+    font-size:clamp(1.7rem,5.2vw,2.1rem);
+    line-height:1.18;
     color:rgba(255,255,255,.94);
     text-shadow:0 2px 2px rgba(35,94,150,.35), 0 10px 30px rgba(14,36,56,.40);
     max-width:22ch;margin:0 auto;padding:46px 14px;
@@ -230,7 +207,7 @@
   .press-empty .q{font-family:'Syne',sans-serif;font-weight:600;font-size:1.25rem;color:var(--ink-faint)}
   .press-empty .n{font-size:.82rem;color:var(--ink-faint);margin-top:10px}
 
-  /* CONTACT — dark "night" postcard sitting on the rainbow sky */
+  /* CONTACT */
   .contact{
     background:linear-gradient(135deg, rgba(14,36,56,.95), rgba(20,52,82,.90));
     color:var(--sky-pale);border-radius:7px;padding:54px 44px;position:relative;overflow:hidden;
@@ -256,8 +233,14 @@
   footer p{margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.9);text-shadow:0 1px 10px rgba(14,36,56,.55)}
 
   /* ---------------- RESPONSIVE ---------------- */
-  @media(max-width:820px){
+
+  /* FIX 2: disable background-attachment:fixed on iPad and below —
+     iOS Safari ignores fixed and renders only a corner of the image */
+  @media(max-width:1024px){
     .sky-zone{background-attachment:scroll}
+  }
+
+  @media(max-width:820px){
     .hero{grid-template-columns:1fr;gap:34px}
     .postcard{max-width:min(330px,100%);margin:0 auto}
     .listen-grid{grid-template-columns:1fr;gap:26px}
@@ -295,7 +278,6 @@
     <header>
       <div class="topbar reveal">
         <div class="mark">Thomas&nbsp;Lai</div>
-        <!-- CanCon designation — radio MDs look for this first. MALP = recorded in Montreal. -->
         <div class="mapl" title="Canadian content: Music, Artist, Lyrics, Performance">CanCon · MALP</div>
       </div>
 
@@ -316,7 +298,6 @@
 
         <div class="reveal">
           <div class="postcard">
-            <!-- PHOTO 1 — main profile portrait. images/hero.jpeg -->
             <img src="images/hero.jpeg" alt="Thomas Lai">
             <div class="stamp">PAR<br>AVION</div>
           </div>
@@ -368,7 +349,6 @@
         <div class="sec-head"><h2>About</h2><div class="rule"></div></div>
         <div class="about">
           <div class="portrait">
-            <!-- PHOTO 2 — zoomed-out / environmental shot. images/portrait.jpeg -->
             <img src="images/portrait.jpeg" alt="Thomas Lai portrait">
           </div>
           <div class="bio">
@@ -393,12 +373,10 @@
         <div class="sec-head"><h2>Thomas Live</h2><div class="rule"></div></div>
         <div class="live-grid">
           <figure>
-            <!-- PHOTO 3 — performance shot #1. images/live-1.jpg -->
             <img src="images/live-1.jpg" alt="Thomas Lai performing live in Montreal">
             <figcaption>Live in Montréal · March 2, 2026</figcaption>
           </figure>
           <figure>
-            <!-- PHOTO 4 — performance shot #2. images/live-2.jpg -->
             <img src="images/live-2.jpg" alt="Thomas Lai performing live in Montreal">
             <figcaption>Live in Montréal · March 2, 2026</figcaption>
           </figure>
@@ -408,13 +386,6 @@
        
   </div>
 </div>
-
-<!-- ================= ZONE 3 · LIVE + PRESS (sky-band.jpeg, reintroduced) ================= -->
-<!-- <div class="sky-zone zone-mid2">
-  <div class="wrap">
-
-  </div>
-</div> -->
 
 <!-- ================= ZONE 3 · PRESS + CONTACT + FOOTER (rainbow_in_sky.jpg) ================= -->
 <div class="sky-zone zone-contact">
