@@ -3,36 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thomas Lai — Electronic Press Kit (EPK) | Montreal Theatrical Pop</title>
-<meta name="description" content="Electronic Press Kit for Thomas Lai, a Taiwanese-Canadian singer-songwriter from Montreal creating theatrical, maximalist indie pop. Debut single 'Ferris Wheel Romance' out now. (CanCon/MAPL)">
-<meta name="keywords" content="Thomas Lai, Montreal indie pop, theatrical pop artist, Taiwanese-Canadian singer-songwriter, CanCon, MAPL, EPK, Ferris Wheel Romance">
+<title>Thomas Lai — Taiwanese-Canadian Singer-Songwriter, Montréal</title>
+<meta name="description" content="Thomas Lai — Taiwanese-Canadian singer-songwriter from Montréal. Theatrical, maximalist music across rock, synth, and theatrical pop. Debut single 'Ferris Wheel Romance' out now.">
+<link rel="canonical" href="https://thomaslaimusic.com/">
 
-<meta property="og:title" content="Thomas Lai — Electronic Press Kit">
-<meta property="og:description" content="Taiwanese-Canadian singer-songwriter from Montreal. Debut single 'Ferris Wheel Romance' out now.">
+<!-- FAVICON: drop a 32x32 PNG (or .ico) into /images, then uncomment the next line -->
+<!-- <link rel="icon" href="https://thomaslaimusic.com/images/favicon.png"> -->
+
+<!-- KEEP THIS EPK OUT OF GOOGLE (so it never competes with your fan front door): uncomment the next line -->
+<!-- <meta name="robots" content="noindex,follow"> -->
+
+<!-- Open Graph — link previews in iMessage, Slack, Facebook, LinkedIn, WhatsApp -->
+<meta property="og:title" content="Thomas Lai — Press Kit">
+<meta property="og:description" content="Taiwanese-Canadian singer-songwriter from Montréal. Debut single 'Ferris Wheel Romance' out now.">
 <meta property="og:type" content="profile">
-<meta property="og:image" content="images/fwrcoverhq.jpg">
+<meta property="og:url" content="https://thomaslaimusic.com/">
+<meta property="og:site_name" content="Thomas Lai">
+<meta property="og:image" content="https://thomaslaimusic.com/images/fwrcoverhq.jpg">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thomas Lai — Press Kit">
+<meta name="twitter:description" content="Taiwanese-Canadian singer-songwriter from Montréal. Debut single 'Ferris Wheel Romance' out now.">
+<meta name="twitter:image" content="https://thomaslaimusic.com/images/fwrcoverhq.jpg">
+
+<!-- Structured data: declares this is the musician Thomas Lai of Montréal and links every
+     profile as ONE entity. This is the signal that disambiguates you from other artists
+     named Thomas Lai. Keep the page indexed (robots line above commented) for this to work. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MusicGroup",
+      "@id": "https://thomaslaimusic.com/#artist",
+      "name": "Thomas Lai",
+      "url": "https://thomaslaimusic.com/",
+      "image": "https://thomaslaimusic.com/images/portrait.jpeg",
+      "genre": ["Singer-Songwriter", "Pop"],
+      "description": "Taiwanese-Canadian singer-songwriter based in Montréal making theatrical, maximalist music across rock, synth, and theatrical pop.",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Montréal, Québec, Canada"
+      },
+      "sameAs": [
+        "https://open.spotify.com/artist/6gC0R5KWF9lozxrgVAZoSA",
+        "https://music.apple.com/us/artist/thomas-lai/1889020506",
+        "https://www.youtube.com/@thomaslaimusic",
+        "https://www.instagram.com/thomaslaimusic",
+        "https://www.tiktok.com/@thomaslaimusic"
+      ]
+    },
+    {
+      "@type": "MusicRecording",
+      "name": "Ferris Wheel Romance",
+      "byArtist": { "@id": "https://thomaslaimusic.com/#artist" },
+      "datePublished": "2026-04-17",
+      "genre": "Pop rock",
+      "url": "https://open.spotify.com/album/1Mlep9T9ATSdF4IsxDKNmk"
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicGroup",
-  "name": "Thomas Lai",
-  "genre": ["Indie Pop", "Theatrical Pop", "Pop Rock"],
-  "url": "https://thomaslaimusic.com",
-  "image": "https://thomaslaimusic.com/images/portrait.jpeg",
-  "description": "Taiwanese-Canadian singer-songwriter based in Montreal making theatrical, maximalist indie pop.",
-  "track": {
-    "@type": "MusicRecording",
-    "name": "Ferris Wheel Romance",
-    "url": "https://open.spotify.com/album/1Mlep9T9ATSdF4IsxDKNmk",
-    "datePublished": "2026-04-17"
-  }
-}
-</script>
 
 <style>
   :root{
@@ -313,7 +349,7 @@
             <div class="postmark">EPK 2026</div>
             <span class="eyebrow">Electronic Press Kit</span>
             <h1>Thomas <em>Lai</em></h1>
-            <p class="oneliner">Taiwanese-Canadian singer-songwriter making theatrical, maximalist indie pop.</p>
+            <p class="oneliner">Taiwanese-Canadian singer-songwriter making theatrical, maximalist music.</p>
             <p class="loc">Montréal, Québec</p>
             <div class="hero-cta">
               <a class="btn btn-solid" href="#listen">Listen</a>
@@ -344,8 +380,8 @@
               <span class="sub">Debut single · April 17, 2026 · Recorded in Montreal</span>
             </p>
             <div class="streams">
-              <a class="btn btn-solid" href="https://open.spotify.com/album/1Mlep9T9ATSdF4IsxDKNmk?utm_source=epk&utm_medium=website" target="_blank" rel="noopener">Spotify</a>
-              <a class="btn btn-ghost" href="https://music.apple.com/us/artist/thomas-lai/1889020506?utm_source=epk&utm_medium=website" target="_blank" rel="noopener">Apple Music</a>
+              <a class="btn btn-solid" href="https://open.spotify.com/album/1Mlep9T9ATSdF4IsxDKNmk?si=Uww_a4OQRLeHwycWOc7upA" target="_blank" rel="noopener">Spotify</a>
+              <a class="btn btn-ghost" href="https://music.apple.com/us/artist/thomas-lai/1889020506" target="_blank" rel="noopener">Apple Music</a>
               <a class="btn btn-ghost" href="https://www.youtube.com/@thomaslaimusic" target="_blank" rel="noopener">YouTube</a>
             </div>
           </div>
@@ -358,7 +394,7 @@
         </div>
       </div>
     </section>
-        
+
   </div>
 </div>
 
@@ -379,7 +415,7 @@
             <p>Thomas Lai is a Taiwanese-Canadian singer-songwriter based in Montreal. His music moves freely between rock, synth, and theatrical pop, maximalist by instinct with his signature grand choir stacks. His closest sonic influence would be Rina Sawayama.</p>
             <div class="more" id="moreBio">
               <p>When it comes to songwriting, he believes in musical storytelling and using the pressure of form as catalyst for poetry, influenced by his songwriting heroes Stephen Schwartz, Lin-Manuel Miranda, and Jonathan Larson above all. Musical theatre is also the source of his belt-forward vocal style, which draws from Aaron Tveit and Jeremy Jordan, singers who he looks up to the most.</p>
-              <p>Live, he strips everything back to voice and piano, where the voice carries the room. His debut single "Ferris Wheel Romance," recorded in Montreal and released April 17, 2026, is a theatrical piece about a queer first romance set in a 2000s pop-rock palette, written for the kids living it now and the older listeners who feel they missed it.</p>
+              <p>Live, he strips everything back to voice and piano, where the voice carries the room. His debut single "Ferris Wheel Romance," recorded in Montreal and released April 17, 2026, is a theatrical piece about a queer first romance set in a 2000s emotional pop-rock palette, written for the kids living it now and the older listeners who feel they missed it.</p>
             </div>
             <button class="readmore" id="readBtn" aria-expanded="false">Read more</button>
           </div>
@@ -397,16 +433,16 @@
         <div class="live-grid">
           <figure>
             <img src="images/live-1.jpg" alt="Thomas Lai performing live in Montreal">
-            <figcaption>Live in Montréal, QC · March 2, 2026</figcaption>
+            <figcaption>Live in Montréal · March 2, 2026</figcaption>
           </figure>
           <figure>
             <img src="images/live-2.jpg" alt="Thomas Lai performing live in Montreal">
-            <figcaption>Live in Montréal, QC · March 2, 2026</figcaption>
+            <figcaption>Live in Montréal · March 2, 2026</figcaption>
           </figure>
         </div>
       </div>
     </section>
-        
+
   </div>
 </div>
 
@@ -415,33 +451,30 @@
   <div class="wrap">
 
     <!-- ---- PRESS ---- -->
-    <!-- 
     <section id="press">
       <div class="card reveal">
         <div class="sec-head"><h2>Press</h2><div class="rule"></div></div>
         <div class="press-empty">
-          <p class="q">Would you kindly help me populate this section :)))</p>
-          <p class="n">Selected press and playlist features will appear here as they land.</p>
+          <p class="q">Selected press &amp; playlist features will appear here as they land.</p>
         </div>
       </div>
     </section>
-    -->
 
     <!-- ~ skywriting lyric 3 (the title line) ~ -->
     <p class="lyric reveal">There's nothing sweeter than kissing you or this Ferris wheel romance</p>
-        
+
     <section id="contact">
       <div class="contact reveal">
         <div class="inner">
           <div>
             <span class="eyebrow" style="color:var(--sun)">Get in touch</span>
-            <h2>Contact & Booking</h2>
+            <h2>For press, radio, sync &amp; booking.</h2>
             <p style="margin-top:18px"><a class="email" href="mailto:thomaslaimusic@gmail.com">thomaslaimusic@gmail.com</a></p>
             <p class="avail">High-resolution photos, WAV files, instrumental and a cappella versions available on request. CanCon designation: MALP.</p>
           </div>
           <nav class="socials">
-            <a href="https://open.spotify.com/album/1Mlep9T9ATSdF4IsxDKNmk?utm_source=epk&utm_medium=website" target="_blank" rel="noopener"><span>SP</span> Spotify</a>
-            <a href="https://music.apple.com/us/artist/thomas-lai/1889020506?utm_source=epk&utm_medium=website" target="_blank" rel="noopener"><span>AM</span> Apple Music</a>
+            <a href="https://open.spotify.com/album/1Mlep9T9ATSdF4IsxDKNmk?si=Uww_a4OQRLeHwycWOc7upA" target="_blank" rel="noopener"><span>SP</span> Spotify</a>
+            <a href="https://music.apple.com/us/artist/thomas-lai/1889020506" target="_blank" rel="noopener"><span>AM</span> Apple Music</a>
             <a href="https://www.youtube.com/@thomaslaimusic" target="_blank" rel="noopener"><span>YT</span> YouTube</a>
             <a href="https://www.instagram.com/thomaslaimusic" target="_blank" rel="noopener"><span>IG</span> Instagram</a>
             <a href="https://www.tiktok.com/@thomaslaimusic" target="_blank" rel="noopener"><span>TT</span> TikTok</a>
@@ -475,5 +508,6 @@
     els.forEach(function(e){io.observe(e)});
   })();
 </script>
+
 </body>
 </html>
