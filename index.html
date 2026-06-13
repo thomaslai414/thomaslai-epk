@@ -954,10 +954,16 @@ function sizeCanvas(){
   W=innerWidth;H=innerHeight;
   cvs.width=W*DPR;cvs.height=H*DPR;
   ctx.setTransform(DPR,0,0,DPR,0,0);
-  seedAtmo();
-  if(REDUCED)drawFrame(0);
 }
-addEventListener('resize',sizeCanvas);
+let lastCanvasW = innerWidth;
+addEventListener('resize',()=>{
+  sizeCanvas();                              // keep the canvas matched to the viewport
+  if(innerWidth!==lastCanvasW){              // reshuffle only on a real width change, not the
+    lastCanvasW=innerWidth;                  // address-bar height changes that fire while scrolling
+    seedAtmo();
+  }
+  if(REDUCED)drawFrame(0);
+});
 
 if(!REDUCED){
   addEventListener('pointermove',e=>{
@@ -1118,6 +1124,8 @@ function drawFrame(t){
 }
 function loop(t){drawFrame(t);requestAnimationFrame(loop)}
 sizeCanvas();
+seedAtmo();
+if(REDUCED)drawFrame(0);
 if(!REDUCED)requestAnimationFrame(loop);
 
 /* ---------------- 3 · SKY SCENE: the wheel on the horizon ---------------- */
