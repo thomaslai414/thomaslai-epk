@@ -19,7 +19,7 @@
 body{ --ink:#26304E; --ink-dim:#4D5878; --chrome:rgba(255,255,255,.30);
       --chrome-line:rgba(255,255,255,.5); --glass-blur:14px; --shadow:0 10px 30px rgba(38,48,78,.16); }
 body[data-sky="dawn"]  { --ink:#33305E; --ink-dim:#5A5685; --chrome:rgba(255,255,255,.28); --chrome-line:rgba(255,255,255,.48); }
-body[data-sky="golden"]{ --ink:#3A2742; --ink-dim:#65486E; --chrome:rgba(255,250,240,.24); --chrome-line:rgba(255,255,255,.4); }
+body[data-sky="golden"]{ --ink:#33305E; --ink-dim:#5A5685; --chrome:rgba(255,255,255,.28); --chrome-line:rgba(255,255,255,.48); } /* identical to dawn */
 body[data-sky="dusk"]  { --ink:#ECEFFD; --ink-dim:#C2CBF0; --chrome:rgba(255,255,255,.12); --chrome-line:rgba(255,255,255,.24); --shadow:0 10px 30px rgba(4,10,30,.4); }
 body[data-sky="night"] { --ink:#E8EEFF; --ink-dim:#A8B4DC; --chrome:rgba(255,255,255,.09); --chrome-line:rgba(255,255,255,.18); --shadow:0 10px 30px rgba(0,0,0,.5); }
 
@@ -281,7 +281,7 @@ const $ = id => document.getElementById(id);
 const SKIES = {
   dawn:  ['#8FA8E8','#D9A8C8','#FFE6D6'],
   day:   ['#5FA9EE','#9FCFF6','#EAF6FF'],
-  golden:['#E8A85C','#D98AA0','#A78BD0'],
+  golden:['#8FA8E8','#D9A8C8','#FFE6D6'],   /* identical to dawn, still called golden hour */
   dusk:  ['#262B6E','#4A5AA8','#3D7A9E'],
   night: ['#040A1E','#0B1733','#13233F']
 };
@@ -290,7 +290,7 @@ const SKIES = {
 const SKY_IMG = {
   dawn:   '/images/sky-dawn.webp',
   day:    '/images/sky-day.webp',
-  golden: '/images/sky-golden.webp',
+  golden: '/images/sky-dawn.webp',
   dusk:   '/images/sky-dusk.webp',
   night:  '/images/sky-night.webp'
 };
@@ -332,7 +332,7 @@ function seedFx(){
 }
 function initFx(){ sizeFx(); seedFx(); }
 const starsOn = ()=> currentState==='night'?1 : currentState==='dusk'?.8 : 0;
-const birdsOn = ()=> currentState==='day'?1 : currentState==='golden'?.85 : 0;
+const birdsOn = ()=> currentState==='day'?1 : 0;   /* golden matches dawn: no birds */
 
 /* main-site "fancy" bird: curved wings that flap. sz = half-wingspan in px. */
 function drawFancyBird(x, y, sz, flap, color, alpha){
