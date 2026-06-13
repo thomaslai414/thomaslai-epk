@@ -104,14 +104,14 @@ h1{ font-family:'Abril Fatface',serif; font-weight:400; text-align:center;
 /* OPEN (tap/click) — on touch this is the ONLY trigger, so toggling .open
    reliably slides out AND back, with nothing left holding it open */
 .music-card.open .vinyl{ transform:translateX(22%) }
-.music-card.open .cover{ transform:translateX(-21%) }
+.music-card.open .cover{ transform:translateX(-17.7%) }
 
 /* hover + keyboard-focus preview only where a real pointer exists */
 @media (hover:hover){
   .sleeve:hover .vinyl,
   .sleeve:focus-visible .vinyl{ transform:translateX(22%) }
   .sleeve:hover .cover,
-  .sleeve:focus-visible .cover{ transform:translateX(-21%) }
+  .sleeve:focus-visible .cover{ transform:translateX(-17.7%) }
 }
 
 .music-meta{text-align:center}
