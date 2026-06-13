@@ -78,7 +78,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .sky-layer.on{opacity:1}
 #skyCanvas{position:fixed;inset:0;z-index:-2;pointer-events:none}
 
-header{position:fixed;top:0;left:0;right:0;z-index:80;background:transparent;padding-bottom:0}
+header{position:fixed;top:0;left:0;right:0;z-index:80;background:transparent;padding-bottom:0;
+  transition:background .35s ease, -webkit-backdrop-filter .35s ease, backdrop-filter .35s ease, box-shadow .35s ease}
+header.scrolled{background:var(--chrome);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 var(--line), 0 8px 24px rgba(20,30,60,.12)}
 .nav{display:flex;align-items:center;gap:24px;max-width:var(--max);margin:0 auto;padding:15px 24px 9px}
 .brand{font-family:var(--display);font-size:1.45rem;text-decoration:none;white-space:nowrap}
 .brand em{font-style:normal;color:var(--accent-soft);transition:color .9s}
@@ -1254,6 +1257,15 @@ function goSignup(){
     tickPending=false;
   }
   addEventListener('scroll',()=>{if(!tickPending){tickPending=true;requestAnimationFrame(update)}},{passive:true});
+  update();
+})();
+
+/* ---------------- header backfill on scroll ---------------- */
+(function(){
+  const hdr=document.querySelector('header');
+  let pending=false;
+  function update(){ hdr.classList.toggle('scrolled', window.scrollY>24); pending=false; }
+  addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(update)}},{passive:true});
   update();
 })();
 
