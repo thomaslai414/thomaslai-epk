@@ -40,10 +40,10 @@ body[data-sky="dawn"]{
   --chrome:rgba(243,242,255,.4); --accent-soft:#2E63D8;
   --bulb-o:.35;
 }
-body[data-sky="golden"]{
-  --ink:#473459; --ink-dim:rgba(71,52,89,.68); --line:rgba(71,52,89,.24);
-  --chrome:rgba(255,242,230,.38); --accent-soft:#3A55C9;
-  --bulb-o:.45;
+body[data-sky="golden"]{ /* identical to dawn, still called golden hour */
+  --ink:#3C4470; --ink-dim:rgba(60,68,112,.66); --line:rgba(60,68,112,.22);
+  --chrome:rgba(243,242,255,.4); --accent-soft:#2E63D8;
+  --bulb-o:.35;
 }
 body[data-sky="dusk"]{
   --ink:#E9EDFF; --ink-dim:rgba(233,237,255,.7); --line:rgba(233,237,255,.24);
@@ -849,16 +849,16 @@ const $ = id => document.getElementById(id);
 const SKIES = {
   dawn:  ['#8FA8E8','#D9A8C8','#FFE6D6'],
   day:   ['#5FA9EE','#9FCFF6','#EAF6FF'],
-  golden:['#E8A85C','#D98AA0','#A78BD0'],
+  golden:['#8FA8E8','#D9A8C8','#FFE6D6'],   /* identical to dawn, still called golden hour */
   dusk:  ['#262B6E','#4A5AA8','#3D7A9E'],
   night: ['#040A1E','#0B1733','#13233F']
 };
 const SKY_IMG = {
   dawn:   'images/sky-dawn.webp',
   day:    'images/sky-day.webp',
-  golden: 'images/sky-golden.webp',
+  golden: 'images/sky-dawn.webp',
   dusk:   'images/sky-dusk.webp',
-  night:  'images/sky-night2.webp'
+  night:  'images/sky-night.webp'
 };
 const ICONS = {dawn:'🌄',day:'☀️',golden:'🌇',dusk:'🌌',night:'🌙'};
 function stateForMinutes(m){
@@ -911,7 +911,7 @@ const mouse = {x:-9999,y:-9999,vx:0,vy:0,on:false};
 const ATMO = {
   dawn:  {star:.35, mote:.5,  moteFill:'255,240,228', bird:.85, birdInk:'#3C4470', breath:0,   meteor:false},
   day:   {star:0,   mote:.6,  moteFill:'255,255,255', bird:1,   birdInk:'#1E3C6E', breath:0,   meteor:false},
-  golden:{star:.08, mote:.5,  moteFill:'255,232,202', bird:.85, birdInk:'#473459', breath:0,   meteor:false},
+  golden:{star:.35, mote:.5,  moteFill:'255,240,228', bird:.85, birdInk:'#3C4470', breath:0,   meteor:false},
   dusk:  {star:.75, mote:.2,  moteFill:'205,214,245', bird:.2,  birdInk:'#C9D2F0', breath:.28, meteor:false},
   night: {star:1,   mote:0,   moteFill:'205,214,245', bird:0,   birdInk:'#C9D2F0', breath:1,   meteor:true}
 };
