@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thomas Lai | Newsletter</title>
-<meta name="description" content="Join Thomas Lai's mailing list The Postcard. Collectable digital postcards and big announcements throughout the album cycle. Free, no spam, unsubscribe anytime.">
+<title>Thomas Lai — Newsletter</title>
+<meta name="description" content="Thomas Lai's mailing list. A collectable digital postcard for every big moment of the album cycle. Free, by email.">
 <link rel="canonical" href="https://thomaslaimusic.com/newsletter">
 
 <!-- social cards -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thomaslaimusic.com/newsletter">
 <meta property="og:title" content="Thomas Lai — The Postcard (Newsletter)">
-<meta property="og:description" content="Collectable digital postcards and big announcements throughout the album cycle. Free, no spam.">
+<meta property="og:description" content="A collectable digital postcard for every big moment of the album cycle. Free, by email.">
 <meta property="og:image" content="https://thomaslaimusic.com/images/portrait.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Thomas Lai — The Postcard (Newsletter)">
-<meta name="twitter:description" content="Collectable digital postcards and big announcements throughout the album cycle. Free, no spam.">
+<meta name="twitter:description" content="A collectable digital postcard for every big moment of the album cycle. Free, by email.">
 <meta name="twitter:image" content="https://thomaslaimusic.com/images/portrait.webp">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,10 +23,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
 /* ============ OPEN SKY · NEWSLETTER ============
-   Same palette, type and simplified living sky as the
-   main site and /links. The signature here is the postcard:
-   the portrait set as a stamp, an airmail edge, and the
-   beehiiv form sitting in the "deliver to" position.        */
+   Same palette, type and simplified living sky as /links.
+   No header; the page is the postcard, signed and stamped.   */
 :root{
   --cobalt:#2E63D8; --blue:#2C5BA8; --ice:#7FB7FF; --teal:#57C7E3;
   --indigo:#4956C9; --aurora:#7CF2C8; --gold:#F2B64B;
@@ -71,44 +69,38 @@ body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
   background:linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.28) 100%);}
 #sky-fx{position:fixed;inset:0;z-index:-1;pointer-events:none}
 
-/* ---- top bar ---- */
-.topbar{max-width:var(--max);margin:0 auto;padding:20px 20px 0;
-  display:flex;align-items:center;gap:18px}
-.brand{font-family:var(--display);font-size:1.3rem;white-space:nowrap}
-.brand em{font-style:normal;color:var(--accent-soft);transition:color 1.2s ease}
-.topnav{margin-left:auto;display:flex;gap:4px}
-.topnav a{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink-dim);padding:7px 12px;border-radius:999px;transition:color .25s,background .3s}
-.topnav a:hover{color:var(--ink);background:var(--chrome)}
+/* ---- shell (no header) ---- */
+.wrap{max-width:var(--max);margin:0 auto;padding:54px 20px 30px}
 
-/* ---- shell ---- */
-.wrap{max-width:var(--max);margin:0 auto;padding:34px 20px 56px}
-
-/* ---- hero copy, sitting on the open sky ---- */
-.hero{text-align:center;display:flex;flex-direction:column;gap:6px;margin-bottom:30px}
+/* ---- hero copy, on the open sky ---- */
+.hero{text-align:center;margin-bottom:28px}
 .eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;
   color:var(--accent-soft);display:inline-flex;align-items:center;justify-content:center;gap:11px;
   transition:color 1.2s ease}
-.eyebrow::before,.eyebrow::after{content:"\2727";font-size:.8rem;opacity:.85}
-.hero h1{font-family:var(--display);font-weight:400;line-height:1.05;
-  font-size:clamp(38px,10vw,52px);letter-spacing:.4px;text-shadow:0 1px 14px rgba(0,0,0,.12);margin-top:8px}
+.eyebrow::before,.eyebrow::after{content:"✧";font-size:.8rem;opacity:.85}
+.hero h1{font-family:var(--display);font-weight:400;line-height:1.04;margin-top:10px;
+  font-size:clamp(40px,11vw,56px);letter-spacing:.4px;text-shadow:0 1px 14px rgba(0,0,0,.12)}
 .tagline{font-family:var(--hand);font-weight:600;font-size:clamp(20px,5.5vw,24px);
-  color:var(--ink-dim);max-width:34ch;margin:2px auto 0;line-height:1.3;transition:color 1.2s ease}
-.lede{color:var(--ink-dim);font-size:1.02rem;line-height:1.55;max-width:46ch;margin:12px auto 0;transition:color 1.2s ease}
+  color:var(--ink-dim);max-width:28ch;margin:6px auto 0;line-height:1.3;transition:color 1.2s ease}
 
-/* ---- the postcard (cream paper, holds the form) ---- */
+/* ---- the postcard ---- */
 .postcard{position:relative;background:var(--cream);color:var(--paper-ink);
-  border-radius:var(--radius);box-shadow:var(--shadow);
-  padding:30px 26px 26px;transition:box-shadow 1.2s ease}
-/* airmail edge */
+  border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
+  padding:30px 28px 26px;transition:box-shadow 1.2s ease}
 .postcard .airmail{position:absolute;top:0;left:0;right:0;height:8px;
-  border-radius:var(--radius) var(--radius) 0 0;
   background:repeating-linear-gradient(-45deg,
     var(--cobalt) 0 8px, transparent 8px 16px, var(--ice) 16px 24px, transparent 24px 32px);}
 
-/* the portrait, framed as a perforated stamp */
-.stamp{position:relative;width:108px;margin:6px auto 18px;transform:rotate(-3deg);
-  filter:drop-shadow(0 8px 18px rgba(20,30,60,.28))}
+/* top zone: message on the left, stamp pinned top-right */
+.pc-top{display:flex;gap:20px;align-items:stretch}
+.pc-msg{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;min-height:190px}
+.greet{font-family:var(--hand);font-size:2rem;color:#4A3B63;line-height:1.2}
+.note{font-family:var(--hand);font-size:1.34rem;color:#4A3B63;line-height:1.34;margin-top:6px}
+.sig{font-family:var(--hand);font-size:1.5rem;color:var(--cobalt);margin-top:auto;padding-top:14px;text-align:right}
+
+/* the portrait, framed as a perforated commemorative stamp */
+.stamp{flex:none;width:140px;align-self:flex-start;transform:rotate(2.5deg);
+  filter:drop-shadow(0 10px 20px rgba(20,30,60,.30))}
 .stamp-perf{--hole:var(--cream);padding:11px;background:
   radial-gradient(circle 5px at 50% 0px,var(--hole) 4.5px,transparent 5px) top left/20px 10px repeat-x,
   radial-gradient(circle 5px at 50% 10px,var(--hole) 4.5px,transparent 5px) bottom left/20px 10px repeat-x,
@@ -118,42 +110,26 @@ body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
 .stamp-inner{position:relative;border:1px solid #E3DCC8;overflow:hidden;aspect-ratio:3/4;
   background:linear-gradient(160deg,#9CC7EF,#4956C9)}
 .stamp-inner img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
-.stamp-inner.fallback::after{content:"\1F3A1";position:absolute;inset:0;display:grid;place-items:center;font-size:2.1rem}
+.stamp-inner.fallback::after{content:"🎡";position:absolute;inset:0;display:grid;place-items:center;font-size:2.6rem}
 .stamp-denom{position:absolute;top:8px;right:8px;background:rgba(255,253,246,.92);color:var(--paper-ink);
   font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;padding:4px 7px;border-radius:3px}
 .stamp-country{position:absolute;bottom:8px;left:8px;background:rgba(255,253,246,.92);color:var(--paper-ink);
-  font-family:var(--mono);font-size:.52rem;letter-spacing:.16em;padding:4px 7px;border-radius:3px;text-transform:uppercase}
+  font-family:var(--mono);font-size:.5rem;letter-spacing:.14em;padding:4px 7px;border-radius:3px;text-transform:uppercase}
 
-.greet{font-family:var(--hand);font-size:1.7rem;color:#4A3B63;line-height:1.3}
-.note{font-family:var(--hand);font-size:1.32rem;color:#4A3B63;line-height:1.32;margin-top:2px}
-.deliver{margin-top:20px}
-.deliver-label{display:block;font-family:var(--mono);font-size:.58rem;letter-spacing:.26em;
-  text-transform:uppercase;color:#8A7E5E;margin-bottom:10px}
-.deliver-label::before{content:"\2192  "}
-
-/* beehiiv embed slot */
+/* address zone: the form sits where the address would go */
+.deliver{margin-top:22px;padding-top:20px;border-top:1px dashed #D8C9A5}
+.deliver-label{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.26em;
+  text-transform:uppercase;color:#8A7E5E;margin-bottom:12px}
+.deliver-label::before{content:"→ "}
 .bh-embed{min-height:120px}
 .bh-embed iframe{max-width:100%!important;width:100%!important}
 .fallback-link{display:inline-flex;align-items:center;gap:8px;background:var(--cobalt);color:#fff;
   border-radius:999px;padding:13px 24px;font-weight:600;font-family:var(--body)}
-
 .fineprint{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
   color:#8A7E5E;margin-top:14px;text-align:center}
-.sig{font-family:var(--hand);font-size:1.5rem;color:var(--cobalt);text-align:right;margin-top:16px}
 
-/* ---- what's inside ---- */
-.inside{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:24px 0 0}
-.inside li{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink);background:var(--chrome);border:1px solid var(--chrome-line);border-radius:999px;
-  padding:8px 14px;backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));
-  transition:color 1.2s ease,background .8s ease,border-color .8s ease}
-
-/* ---- footer ---- */
-.foot{max-width:var(--max);margin:0 auto;padding:0 20px 56px;text-align:center}
-.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 4px;margin-bottom:26px}
-.foot-links a{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink-dim);padding:7px 12px;border-radius:999px;transition:color .25s,background .3s}
-.foot-links a:hover{color:var(--accent-soft);background:var(--chrome)}
+/* ---- footer: live sky + link home, nothing else ---- */
+.foot{max-width:var(--max);margin:0 auto;padding:30px 20px 56px;text-align:center}
 .skyline{display:flex;justify-content:center}
 #skyPill{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
   color:var(--ink-dim);background:var(--chrome);border:1px solid var(--chrome-line);
@@ -164,11 +140,13 @@ body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
   margin-top:16px;opacity:.8;transition:color 1.2s ease}
 .credit a{border-bottom:1px dotted var(--ink-dim)}
 
-@media (max-width:480px){
-  .wrap{padding:26px 16px 48px}
-  .topbar{padding:16px 16px 0}
+@media (max-width:520px){
+  .wrap{padding:44px 16px 24px}
   .postcard{padding:26px 18px 22px}
-  .greet{font-size:1.5rem}.note{font-size:1.2rem}
+  .pc-top{gap:14px}
+  .pc-msg{min-height:152px}
+  .stamp{width:106px}
+  .greet{font-size:1.7rem}.note{font-size:1.2rem}.sig{font-size:1.35rem}
 }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} }
 </style>
@@ -182,37 +160,32 @@ body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
 <div class="sky-scrim"></div>
 <canvas id="sky-fx" aria-hidden="true"></canvas>
 
-<header class="topbar">
-  <a class="brand" href="https://thomaslaimusic.com">Thomas <em>Lai</em></a>
-  <nav class="topnav" aria-label="Site">
-    <a href="https://thomaslaimusic.com">Site</a>
-    <a href="/links/">Links</a>
-  </nav>
-</header>
-
 <main class="wrap">
 
   <div class="hero">
     <span class="eyebrow">Free · by email</span>
     <h1 id="hero-title">The Postcard</h1>
     <p class="tagline">Come along on my artist debut journey&nbsp;✧</p>
-    <p class="lede">Every new postcard lands in your inbox as a full-resolution PDF — with the lore behind that chapter of the album cycle.</p>
   </div>
 
   <section class="postcard" aria-labelledby="hero-title">
     <div class="airmail" aria-hidden="true"></div>
 
-    <figure class="stamp stamp-perf">
-      <div class="stamp-inner">
-        <img src="/images/portrait.webp" alt="Portrait of Thomas Lai"
-             loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('fallback')">
-        <span class="stamp-denom">N&ordm; 1</span>
-        <span class="stamp-country">Montr&eacute;al · Canada</span>
+    <div class="pc-top">
+      <div class="pc-msg">
+        <p class="greet">Dear you,</p>
+        <p class="note">A collectable postcard for every big moment of the album cycle — full-res, with the lore behind it. Nothing else&nbsp;✧</p>
+        <p class="sig">— Thomas ✧</p>
       </div>
-    </figure>
-
-    <p class="greet">Dear you,</p>
-    <p class="note">Sign up below and I'll send the postcards as the era unfolds. Big announcements only, promise.&nbsp;✧</p>
+      <figure class="stamp stamp-perf">
+        <div class="stamp-inner">
+          <img src="/images/portrait.webp" alt="Portrait of Thomas Lai"
+               loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('fallback')">
+          <span class="stamp-denom">N&ordm; 1</span>
+          <span class="stamp-country">Montr&eacute;al · Canada</span>
+        </div>
+      </figure>
+    </div>
 
     <div class="deliver">
       <span class="deliver-label">Deliver to</span>
@@ -220,31 +193,17 @@ body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
         <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="096f4275-da4a-459e-9260-74dd30d7cacb"></script>
         <noscript><a class="fallback-link" href="https://thomaslaimusic.beehiiv.com/subscribe" target="_blank" rel="noopener">Open the subscribe form ↗</a></noscript>
       </div>
-      <p class="fineprint">Free · No spam · Unsubscribe anytime</p>
+      <p class="fineprint">Unsubscribe anytime</p>
     </div>
-
-    <p class="sig">— Thomas ✧</p>
   </section>
-
-  <ul class="inside" aria-label="What you'll receive">
-    <li>🎡 Collectable postcards</li>
-    <li>📮 Big news, first</li>
-    <li>✉️ Straight to your inbox</li>
-  </ul>
 
 </main>
 
 <footer class="foot">
-  <nav class="foot-links" aria-label="More from Thomas Lai">
-    <a href="https://thomaslaimusic.com">Main site</a>
-    <a href="/links/">All links</a>
-    <a href="https://thomaslaimusic.com/#/press">Press</a>
-    <a href="mailto:thomaslaimusic@gmail.com">Contact</a>
-  </nav>
   <div class="skyline">
     <button id="skyPill" type="button" aria-label="Sky time — tap to preview other skies">&#9728;&#65039; LIVE SKY</button>
   </div>
-  <p class="credit">© <span id="yr"></span> Thomas Lai · Montréal · <a href="https://thomaslaimusic.com">thomaslaimusic.com</a></p>
+  <p class="credit">© <span id="yr"></span> Thomas Lai · <a href="https://thomaslaimusic.com">thomaslaimusic.com</a></p>
 </footer>
 
 <script>
