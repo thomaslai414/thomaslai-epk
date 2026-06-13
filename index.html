@@ -105,14 +105,16 @@ main{padding-top:64px}
 .page .wrap>section:first-child{padding-top:8px}
 
 .stage-reveal{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
-  max-width:940px;margin:0 auto;cursor:pointer;display:block;transition:box-shadow .9s}
+  /* max-width:940px;margin:0 auto;cursor:pointer;display:block;transition:box-shadow .9s}*/
+  margin:0 auto;cursor:pointer;display:block;transition:box-shadow .9s}
 .stage-reveal img{width:100%;display:block}
 .stage-reveal .sr-color{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
 .stage-reveal:hover .sr-color,.stage-reveal:focus-visible .sr-color,.stage-reveal.lit .sr-color{opacity:1}
 .stage-reveal .cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;font-family:var(--mono);
   font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:#FFFDF6;
   background:linear-gradient(transparent,rgba(14,22,52,.85));pointer-events:none}
-.listen-live{max-width:720px;margin:42px auto 0;background:var(--paper);color:var(--paper-ink);
+/* .listen-live{max-width:720px;margin:42px auto 0;background:var(--paper);color:var(--paper-ink);*/
+.listen-live{max-width:500px;margin:42px auto 0;background:var(--paper);color:var(--paper-ink);
   border-radius:var(--radius);box-shadow:var(--shadow);display:flex;align-items:center;gap:20px;
   padding:18px 22px;transition:box-shadow .9s}
 .ll-btn{flex:none;width:58px;height:58px;border-radius:50%;border:none;background:var(--cobalt);color:#fff;
@@ -158,7 +160,8 @@ h1,h2,h3{font-weight:400;line-height:1.08}
 .display-xl{font-family:var(--display);font-size:clamp(2.7rem,7vw,5.4rem)}
 .display-lg{font-family:var(--display);font-size:clamp(2rem,4.6vw,3.3rem)}
 .display-md{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,1.9rem)}
-.lede{color:var(--ink-dim);font-size:1.08rem;max-width:58ch;transition:color .9s}
+/* .lede{color:var(--ink-dim);font-size:1.08rem;max-width:58ch;transition:color .9s} */
+.lede{color:var(--ink-dim);font-size:1.08rem;transition:color .9s}
 section{padding:84px 0}
 .section-head{display:flex;flex-direction:column;gap:14px;margin-bottom:44px}
 
@@ -661,12 +664,13 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
       <div class="listen-live" id="listenLive">
         <button class="ll-btn" id="llBtn" type="button" aria-label="Play the live recording">▶</button>
         <div class="ll-meta">
-          <h3>Live audio from La Sotterenea (2 March 2026)</h3>
+          <h3>Play live performance audio (To Make You feel My Love - Billy Joel)</h3>
           <div class="sub">Voice &amp; piano · recorded in this room</div>
           <div class="ll-eq" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
         </div>
       </div>
-      <p class="shop-note" style="margin-top:14px">Full set available ("To Make You Feel My Love" &amp; "Ferris Wheel Romance") on YouTube</p>
+      <!-- <p class="shop-note" style="margin-top:14px">Full set available ("To Make You Feel My Love" &amp; "Ferris Wheel Romance") on YouTube</p> -->
+      <p class="shop-note" style="margin-top:14px"><a href="https://youtube.com/playlist?list=PL-exl0H6-sDf1dvjpGmj7o8BAdIA6MNwh&si=r_V88jVwHtGhobrK" target="_blank" rel="noopener">Full set available ("To Make You Feel My Love" &amp; "Ferris Wheel Romance") on YouTube</a></p>
 
       <div class="live-gallery">
         <figure class="live-pc">
@@ -811,7 +815,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
       <div class="soon" style="margin-top:56px">
         <span class="eyebrow">Press &amp; playlists</span>
         <h3 class="display-md">Selected coverage</h3>
-        <p class="lede">Press and playlist features will appear here as they land. Writing about Thomas? Get in touch — thomaslaimusic@gmail.com.</p>
+        <p class="lede">Press and playlist features will appear here as they land. For booking, press, sync, or other inquiries: thomaslaimusic@gmail.com.</p>
       </div>
     </section>
   </div>
@@ -858,7 +862,7 @@ const SKY_IMG = {
   day:    'images/sky-day.webp',
   golden: 'images/sky-dawn.webp',
   dusk:   'images/sky-dusk.webp',
-  night:  'images/sky-night.webp'
+  night:  'images/sky-night2.webp'
 };
 const ICONS = {dawn:'🌄',day:'☀️',golden:'🌇',dusk:'🌌',night:'🌙'};
 function stateForMinutes(m){
@@ -921,8 +925,10 @@ function seedAtmo(){
   /* fewer particles on small/touch screens — calmer + lighter */
   const small = W < 760;
   const STAR_N = small ? 90  : 240;
-  const MOTE_N = small ? 16  : 64;
-  const BIRD_N = small ? 4   : 8;
+  // const MOTE_N = small ? 16  : 64;
+  // const BIRD_N = small ? 4   : 8;
+  const MOTE_N = small ? 4  : 8;
+  const BIRD_N = small ? 2   : 4;
   stars=[];
   for(let i=0;i<STAR_N;i++)stars.push({
     x:Math.random(), y:Math.random()*.82,
