@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomas Lai | Newsletter</title>
+<meta name="description" content="Join Thomas Lai's mailing list The Postcard. Collectable digital postcards and big announcements throughout the album cycle. Free, no spam, unsubscribe anytime.">
+<link rel="canonical" href="https://thomaslaimusic.com/newsletter">
+
+<!-- social cards -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thomaslaimusic.com/newsletter">
+<meta property="og:title" content="Thomas Lai — The Postcard (Newsletter)">
+<meta property="og:description" content="Collectable digital postcards and big announcements throughout the album cycle. Free, no spam.">
+<meta property="og:image" content="https://thomaslaimusic.com/images/portrait.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thomas Lai — The Postcard (Newsletter)">
+<meta name="twitter:description" content="Collectable digital postcards and big announcements throughout the album cycle. Free, no spam.">
+<meta name="twitter:image" content="https://thomaslaimusic.com/images/portrait.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ OPEN SKY · NEWSLETTER ============
+   Same palette, type and simplified living sky as the
+   main site and /links. The signature here is the postcard:
+   the portrait set as a stamp, an airmail edge, and the
+   beehiiv form sitting in the "deliver to" position.        */
+:root{
+  --cobalt:#2E63D8; --blue:#2C5BA8; --ice:#7FB7FF; --teal:#57C7E3;
+  --indigo:#4956C9; --aurora:#7CF2C8; --gold:#F2B64B;
+  --paper:#FFFDF6; --cream:#FFF6E8; --kraft:#EFE3CB;
+  --paper-ink:#26304E; --paper-dim:#5C6584;
+  --display:'Abril Fatface',serif;
+  --body:'Hanken Grotesk',system-ui,sans-serif;
+  --mono:'Space Mono',monospace;
+  --hand:'Caveat',cursive;
+  --radius:16px; --max:640px;
+}
+/* sky-reactive ink — mirrors the main site + links exactly */
+body{ --ink:#26304E; --ink-dim:#4D5878; --accent-soft:#2E63D8;
+      --chrome:rgba(255,255,255,.30); --chrome-line:rgba(255,255,255,.5);
+      --glass-blur:14px; --shadow:0 10px 30px rgba(38,48,78,.16); }
+body[data-sky="dawn"]  { --ink:#33305E; --ink-dim:#5A5685; --accent-soft:#2E63D8; --chrome:rgba(255,255,255,.28); --chrome-line:rgba(255,255,255,.48); }
+body[data-sky="golden"]{ --ink:#33305E; --ink-dim:#5A5685; --accent-soft:#2E63D8; --chrome:rgba(255,255,255,.28); --chrome-line:rgba(255,255,255,.48); } /* identical to dawn */
+body[data-sky="dusk"]  { --ink:#ECEFFD; --ink-dim:#C2CBF0; --accent-soft:#8FD8FF; --chrome:rgba(255,255,255,.12); --chrome-line:rgba(255,255,255,.24); --shadow:0 10px 30px rgba(4,10,30,.4); }
+body[data-sky="night"] { --ink:#E8EEFF; --ink-dim:#A8B4DC; --accent-soft:#8FD8FF; --chrome:rgba(255,255,255,.09); --chrome-line:rgba(255,255,255,.18); --shadow:0 10px 30px rgba(0,0,0,.5); }
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:var(--body); color:var(--ink); background:#6FB4F0;
+  min-height:100vh; line-height:1.6; overflow-x:hidden;
+  transition:color 1.2s ease;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--cobalt);color:#fff}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent-soft);outline-offset:3px;border-radius:6px}
+
+/* ---- the living sky (photo layers over gradient + ambient canvas) ---- */
+.sky-stage{position:fixed;inset:0;z-index:-3;background:#0B1733;overflow:hidden}
+.sky-layer{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;
+  background-size:cover;background-position:center bottom;background-repeat:no-repeat}
+.sky-layer.on{opacity:1}
+.sky-scrim{position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:linear-gradient(180deg, rgba(8,16,40,.04) 0%, rgba(8,16,40,.10) 100%);}
+body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
+  background:linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.28) 100%);}
+#sky-fx{position:fixed;inset:0;z-index:-1;pointer-events:none}
+
+/* ---- top bar ---- */
+.topbar{max-width:var(--max);margin:0 auto;padding:20px 20px 0;
+  display:flex;align-items:center;gap:18px}
+.brand{font-family:var(--display);font-size:1.3rem;white-space:nowrap}
+.brand em{font-style:normal;color:var(--accent-soft);transition:color 1.2s ease}
+.topnav{margin-left:auto;display:flex;gap:4px}
+.topnav a{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-dim);padding:7px 12px;border-radius:999px;transition:color .25s,background .3s}
+.topnav a:hover{color:var(--ink);background:var(--chrome)}
+
+/* ---- shell ---- */
+.wrap{max-width:var(--max);margin:0 auto;padding:34px 20px 56px}
+
+/* ---- hero copy, sitting on the open sky ---- */
+.hero{text-align:center;display:flex;flex-direction:column;gap:6px;margin-bottom:30px}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--accent-soft);display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  transition:color 1.2s ease}
+.eyebrow::before,.eyebrow::after{content:"\2727";font-size:.8rem;opacity:.85}
+.hero h1{font-family:var(--display);font-weight:400;line-height:1.05;
+  font-size:clamp(38px,10vw,52px);letter-spacing:.4px;text-shadow:0 1px 14px rgba(0,0,0,.12);margin-top:8px}
+.tagline{font-family:var(--hand);font-weight:600;font-size:clamp(20px,5.5vw,24px);
+  color:var(--ink-dim);max-width:34ch;margin:2px auto 0;line-height:1.3;transition:color 1.2s ease}
+.lede{color:var(--ink-dim);font-size:1.02rem;line-height:1.55;max-width:46ch;margin:12px auto 0;transition:color 1.2s ease}
+
+/* ---- the postcard (cream paper, holds the form) ---- */
+.postcard{position:relative;background:var(--cream);color:var(--paper-ink);
+  border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:30px 26px 26px;transition:box-shadow 1.2s ease}
+/* airmail edge */
+.postcard .airmail{position:absolute;top:0;left:0;right:0;height:8px;
+  border-radius:var(--radius) var(--radius) 0 0;
+  background:repeating-linear-gradient(-45deg,
+    var(--cobalt) 0 8px, transparent 8px 16px, var(--ice) 16px 24px, transparent 24px 32px);}
+
+/* the portrait, framed as a perforated stamp */
+.stamp{position:relative;width:108px;margin:6px auto 18px;transform:rotate(-3deg);
+  filter:drop-shadow(0 8px 18px rgba(20,30,60,.28))}
+.stamp-perf{--hole:var(--cream);padding:11px;background:
+  radial-gradient(circle 5px at 50% 0px,var(--hole) 4.5px,transparent 5px) top left/20px 10px repeat-x,
+  radial-gradient(circle 5px at 50% 10px,var(--hole) 4.5px,transparent 5px) bottom left/20px 10px repeat-x,
+  radial-gradient(circle 5px at 0px 50%,var(--hole) 4.5px,transparent 5px) top left/10px 20px repeat-y,
+  radial-gradient(circle 5px at 10px 50%,var(--hole) 4.5px,transparent 5px) top right/10px 20px repeat-y,
+  #FFFFFF}
+.stamp-inner{position:relative;border:1px solid #E3DCC8;overflow:hidden;aspect-ratio:3/4;
+  background:linear-gradient(160deg,#9CC7EF,#4956C9)}
+.stamp-inner img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.stamp-inner.fallback::after{content:"\1F3A1";position:absolute;inset:0;display:grid;place-items:center;font-size:2.1rem}
+.stamp-denom{position:absolute;top:8px;right:8px;background:rgba(255,253,246,.92);color:var(--paper-ink);
+  font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;padding:4px 7px;border-radius:3px}
+.stamp-country{position:absolute;bottom:8px;left:8px;background:rgba(255,253,246,.92);color:var(--paper-ink);
+  font-family:var(--mono);font-size:.52rem;letter-spacing:.16em;padding:4px 7px;border-radius:3px;text-transform:uppercase}
+
+.greet{font-family:var(--hand);font-size:1.7rem;color:#4A3B63;line-height:1.3}
+.note{font-family:var(--hand);font-size:1.32rem;color:#4A3B63;line-height:1.32;margin-top:2px}
+.deliver{margin-top:20px}
+.deliver-label{display:block;font-family:var(--mono);font-size:.58rem;letter-spacing:.26em;
+  text-transform:uppercase;color:#8A7E5E;margin-bottom:10px}
+.deliver-label::before{content:"\2192  "}
+
+/* beehiiv embed slot */
+.bh-embed{min-height:120px}
+.bh-embed iframe{max-width:100%!important;width:100%!important}
+.fallback-link{display:inline-flex;align-items:center;gap:8px;background:var(--cobalt);color:#fff;
+  border-radius:999px;padding:13px 24px;font-weight:600;font-family:var(--body)}
+
+.fineprint{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+  color:#8A7E5E;margin-top:14px;text-align:center}
+.sig{font-family:var(--hand);font-size:1.5rem;color:var(--cobalt);text-align:right;margin-top:16px}
+
+/* ---- what's inside ---- */
+.inside{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:24px 0 0}
+.inside li{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink);background:var(--chrome);border:1px solid var(--chrome-line);border-radius:999px;
+  padding:8px 14px;backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));
+  transition:color 1.2s ease,background .8s ease,border-color .8s ease}
+
+/* ---- footer ---- */
+.foot{max-width:var(--max);margin:0 auto;padding:0 20px 56px;text-align:center}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 4px;margin-bottom:26px}
+.foot-links a{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-dim);padding:7px 12px;border-radius:999px;transition:color .25s,background .3s}
+.foot-links a:hover{color:var(--accent-soft);background:var(--chrome)}
+.skyline{display:flex;justify-content:center}
+#skyPill{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;
+  color:var(--ink-dim);background:var(--chrome);border:1px solid var(--chrome-line);
+  border-radius:999px;padding:8px 16px;
+  backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));
+  transition:background .3s ease,color 1.2s ease}
+.credit{font-family:var(--mono);font-size:10px;letter-spacing:1.4px;color:var(--ink-dim);
+  margin-top:16px;opacity:.8;transition:color 1.2s ease}
+.credit a{border-bottom:1px dotted var(--ink-dim)}
+
+@media (max-width:480px){
+  .wrap{padding:26px 16px 48px}
+  .topbar{padding:16px 16px 0}
+  .postcard{padding:26px 18px 22px}
+  .greet{font-size:1.5rem}.note{font-size:1.2rem}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} }
+</style>
+</head>
+<body data-sky="day">
+
+<div class="sky-stage">
+  <div class="sky-layer" id="skyA"></div>
+  <div class="sky-layer" id="skyB"></div>
+</div>
+<div class="sky-scrim"></div>
+<canvas id="sky-fx" aria-hidden="true"></canvas>
+
+<header class="topbar">
+  <a class="brand" href="https://thomaslaimusic.com">Thomas <em>Lai</em></a>
+  <nav class="topnav" aria-label="Site">
+    <a href="https://thomaslaimusic.com">Site</a>
+    <a href="/links/">Links</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <span class="eyebrow">Free · by email</span>
+    <h1 id="hero-title">The Postcard</h1>
+    <p class="tagline">Come along on my artist debut journey&nbsp;✧</p>
+    <p class="lede">Every new postcard lands in your inbox as a full-resolution PDF — with the lore behind that chapter of the album cycle.</p>
+  </div>
+
+  <section class="postcard" aria-labelledby="hero-title">
+    <div class="airmail" aria-hidden="true"></div>
+
+    <figure class="stamp stamp-perf">
+      <div class="stamp-inner">
+        <img src="/images/portrait.webp" alt="Portrait of Thomas Lai"
+             loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('fallback')">
+        <span class="stamp-denom">N&ordm; 1</span>
+        <span class="stamp-country">Montr&eacute;al · Canada</span>
+      </div>
+    </figure>
+
+    <p class="greet">Dear you,</p>
+    <p class="note">Sign up below and I'll send the postcards as the era unfolds. Big announcements only, promise.&nbsp;✧</p>
+
+    <div class="deliver">
+      <span class="deliver-label">Deliver to</span>
+      <div class="bh-embed" id="bhEmbed">
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="096f4275-da4a-459e-9260-74dd30d7cacb"></script>
+        <noscript><a class="fallback-link" href="https://thomaslaimusic.beehiiv.com/subscribe" target="_blank" rel="noopener">Open the subscribe form ↗</a></noscript>
+      </div>
+      <p class="fineprint">Free · No spam · Unsubscribe anytime</p>
+    </div>
+
+    <p class="sig">— Thomas ✧</p>
+  </section>
+
+  <ul class="inside" aria-label="What you'll receive">
+    <li>🎡 Collectable postcards</li>
+    <li>📮 Big news, first</li>
+    <li>✉️ Straight to your inbox</li>
+  </ul>
+
+</main>
+
+<footer class="foot">
+  <nav class="foot-links" aria-label="More from Thomas Lai">
+    <a href="https://thomaslaimusic.com">Main site</a>
+    <a href="/links/">All links</a>
+    <a href="https://thomaslaimusic.com/#/press">Press</a>
+    <a href="mailto:thomaslaimusic@gmail.com">Contact</a>
+  </nav>
+  <div class="skyline">
+    <button id="skyPill" type="button" aria-label="Sky time — tap to preview other skies">&#9728;&#65039; LIVE SKY</button>
+  </div>
+  <p class="credit">© <span id="yr"></span> Thomas Lai · Montréal · <a href="https://thomaslaimusic.com">thomaslaimusic.com</a></p>
+</footer>
+
+<script>
+/* =================== SIMPLIFIED LIVING SKY ===================
+   Photo layers over a gradient, with a low-density ambient
+   canvas (birds, motes, stars, shooting stars). Same clock and
+   states as the main site and /links. The pill cycles previews;
+   left alone it follows the visitor's local sky.                */
+const SKIES = {
+  dawn:  ['#8FA8E8','#D9A8C8','#FFE6D6'],
+  day:   ['#5FA9EE','#9FCFF6','#EAF6FF'],
+  golden:['#8FA8E8','#D9A8C8','#FFE6D6'],   /* identical to dawn, still called golden hour */
+  dusk:  ['#262B6E','#4A5AA8','#3D7A9E'],
+  night: ['#040A1E','#0B1733','#13233F']
+};
+/* the same WebP skies as the rest of the site, in /images/.
+   leave a key out (or blank) and that state just uses its gradient. */
+const SKY_IMG = {
+  dawn:   '/images/sky-dawn.webp',
+  day:    '/images/sky-day.webp',
+  golden: '/images/sky-dawn.webp',
+  dusk:   '/images/sky-dusk.webp',
+  night:  '/images/sky-night.webp'
+};
+const ICONS = {dawn:'\ud83c\udf04',day:'\u2600\ufe0f',golden:'\ud83c\udf07',dusk:'\ud83c\udf0c',night:'\ud83c\udf19'};
+const CYCLE = ['dawn','day','golden','dusk','night', null];   // null = LIVE SKY
+let cycleIdx = CYCLE.length - 1;                              // start on LIVE
+
+let activeLayer='A', currentState=null, preview=null;
+
+function stateForMinutes(m){
+  const h = m/60;
+  if(h>=5 && h<7.5) return 'dawn';
+  if(h>=7.5 && h<17) return 'day';
+  if(h>=17 && h<18.5) return 'golden';
+  if(h>=18.5 && h<21.5) return 'dusk';
+  return 'night';
+}
+
+const $ = id => document.getElementById(id);
+
+/* ---- ambient canvas: low-density birds, motes, stars, shooting stars ---- */
+const fx = $('sky-fx'), fxc = fx.getContext('2d');
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let W=0,H=0, DPR=Math.min(window.devicePixelRatio||1,2);
+let stars=[], motes=[], birds=[], shooters=[], lastShoot=0;
+const rnd=(a,b)=>a+Math.random()*(b-a);
+
+function spawnBird(){
+  const dir=Math.random()<.5?1:-1;
+  return { x: dir>0 ? rnd(-W*0.2,-10) : rnd(W+10,W*1.2),
+           y: rnd(H*0.12,H*0.42), s: rnd(7,12)*DPR, v: dir*rnd(.25,.5)*DPR,
+           dir, ph: Math.random()*6.28, fr: rnd(.18,.26) }; }
+function sizeFx(){
+  W = fx.width = innerWidth*DPR; H = fx.height = innerHeight*DPR;
+  fx.style.width = innerWidth+'px'; fx.style.height = innerHeight+'px';
+}
+function seedFx(){
+  stars  = Array.from({length:46},()=>({x:Math.random()*W,y:Math.random()*H*0.62,r:rnd(.5,1.5)*DPR,p:Math.random()*6.28,s:rnd(.6,1.8)}));
+  motes  = Array.from({length:16},()=>({x:Math.random()*W,y:Math.random()*H,r:rnd(.6,1.9)*DPR,vx:rnd(-.06,.06)*DPR,vy:rnd(-.16,-.04)*DPR,a:rnd(.05,.18)}));
+  birds  = Array.from({length:2}, spawnBird);
+}
+function initFx(){ sizeFx(); seedFx(); }
+const starsOn = ()=> currentState==='night'?1 : currentState==='dusk'?.8 : 0;
+const birdsOn = ()=> currentState==='day'?1 : 0;   /* golden matches dawn: no birds */
+
+/* main-site "fancy" bird: curved wings that flap. sz = half-wingspan in px. */
+function drawFancyBird(x, y, sz, flap, color, alpha){
+  const s = sz/7;                       // match the main site's proportions
+  const w = Math.sin(flap)*5*s;
+  fxc.save();
+  fxc.strokeStyle = color;
+  fxc.globalAlpha = alpha;
+  fxc.lineWidth = Math.max(1, 1.8*s);
+  fxc.lineCap = 'round';
+  fxc.beginPath();
+  fxc.moveTo(x-7*s, y + (w>0 ? -w : 2*s));
+  fxc.quadraticCurveTo(x-3*s, y-w-3*s, x, y);
+  fxc.quadraticCurveTo(x+3*s, y-w-3*s, x+7*s, y + (w>0 ? -w : 2*s));
+  fxc.stroke();
+  fxc.restore();
+}
+
+function drawFx(t){
+  fxc.clearRect(0,0,W,H);
+  const light = currentState==='dusk' || currentState==='night';
+  const moteCol = light ? '221,233,255' : '38,48,78';
+  for(const m of motes){
+    m.x+=m.vx; m.y+=m.vy;
+    if(m.y<-4){m.y=H+4;m.x=Math.random()*W;}
+    if(m.x<-4)m.x=W+4; if(m.x>W+4)m.x=-4;
+    fxc.fillStyle=`rgba(${moteCol},${m.a})`;
+    fxc.beginPath(); fxc.arc(m.x,m.y,m.r,0,6.3); fxc.fill();
+  }
+  const sa = starsOn();
+  if(sa>0){
+    for(const s of stars){
+      const tw = 0.55 + 0.45*Math.sin(t*0.001*s.s + s.p);
+      fxc.fillStyle=`rgba(221,233,255,${(tw*sa).toFixed(3)})`;
+      fxc.beginPath(); fxc.arc(s.x,s.y,s.r,0,6.3); fxc.fill();
+    }
+    if(t-lastShoot > 6500 && Math.random()<.05){
+      lastShoot=t;
+      shooters.push({x:rnd(W*0.1,W*0.7),y:rnd(0,H*0.3),vx:rnd(5,9)*DPR,vy:rnd(2.5,5)*DPR,life:1});
+    }
+  } else shooters.length=0;
+  for(let i=shooters.length-1;i>=0;i--){
+    const sh=shooters[i]; sh.x+=sh.vx; sh.y+=sh.vy; sh.life-=0.018;
+    if(sh.life<=0){shooters.splice(i,1);continue;}
+    const tx=sh.x-sh.vx*8, ty=sh.y-sh.vy*8;
+    const g=fxc.createLinearGradient(sh.x,sh.y,tx,ty);
+    g.addColorStop(0,`rgba(255,255,255,${(sh.life*sa).toFixed(3)})`);
+    g.addColorStop(1,'rgba(255,255,255,0)');
+    fxc.strokeStyle=g; fxc.lineWidth=1.6*DPR; fxc.lineCap='round';
+    fxc.beginPath(); fxc.moveTo(sh.x,sh.y); fxc.lineTo(tx,ty); fxc.stroke();
+  }
+  const ba = birdsOn();
+  if(ba>0){
+    for(const b of birds){
+      b.x+=b.v; b.ph+=b.fr;
+      drawFancyBird(b.x, b.y, b.s, b.ph, '#26304E', 0.62*ba);
+      if((b.dir>0 && b.x>W*1.2) || (b.dir<0 && b.x<-W*0.2)) Object.assign(b,spawnBird());
+    }
+  }
+  requestAnimationFrame(drawFx);
+}
+function drawStatic(){
+  fxc.clearRect(0,0,W,H); const sa=starsOn();
+  if(sa>0) for(const s of stars){
+    fxc.fillStyle=`rgba(221,233,255,${(0.8*sa).toFixed(3)})`;
+    fxc.beginPath(); fxc.arc(s.x,s.y,s.r,0,6.3); fxc.fill();
+  }
+}
+function startFx(){ initFx(); reduceMotion ? drawStatic() : requestAnimationFrame(drawFx); }
+let lastFxW = innerWidth;
+addEventListener('resize', ()=>{
+  sizeFx();                                  // keep the canvas matched to the viewport
+  if(innerWidth !== lastFxW){                // reshuffle only on a real width change,
+    lastFxW = innerWidth;                    // not the address-bar height changes during scroll
+    seedFx();
+  }
+  if(reduceMotion) drawStatic();
+});
+
+/* ---- paint sky layers ---- */
+function paintSky(state){
+  if(state===currentState) return;
+  currentState = state;
+  const [a,b,c] = SKIES[state];
+  const grad = `linear-gradient(180deg, ${a} 0%, ${b} 55%, ${c} 100%)`;
+  const img = SKY_IMG[state];
+  const next = activeLayer==='A' ? $('skyB') : $('skyA');
+  const prev = activeLayer==='A' ? $('skyA') : $('skyB');
+  next.style.background = img ? `url("${img}") center bottom / cover no-repeat, ${grad}` : grad;
+  next.classList.add('on'); prev.classList.remove('on');
+  activeLayer = activeLayer==='A' ? 'B' : 'A';
+  document.body.dataset.sky = state;
+  $('skyPill').textContent = `${ICONS[state]} ${preview ? 'PREVIEW \u00b7 '+state.toUpperCase() : 'LIVE SKY'}`;
+  if(reduceMotion) drawStatic();
+}
+const liveState = ()=>{ const d=new Date(); return stateForMinutes(d.getHours()*60+d.getMinutes()); };
+function syncSky(){ if(!preview) paintSky(liveState()); }
+$('skyPill').addEventListener('click', ()=>{
+  cycleIdx = (cycleIdx + 1) % CYCLE.length;     // advance, wrapping around
+  preview = CYCLE[cycleIdx];
+  const state = preview ?? liveState();
+  paintSky(state);
+  $('skyPill').textContent = `${ICONS[state]} ${preview ? 'PREVIEW \u00b7 '+state.toUpperCase() : 'LIVE SKY'}`;
+});
+setInterval(syncSky, 60000);
+
+/* ---- boot ---- */
+$('yr').textContent = new Date().getFullYear();
+startFx();
+syncSky();
+</script>
+</body>
+</html>
