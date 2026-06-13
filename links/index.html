@@ -292,7 +292,7 @@ const SKY_IMG = {
   day:    '/images/sky-day.webp',
   golden: '/images/sky-golden.webp',
   dusk:   '/images/sky-dusk.webp',
-  night:  '/images/sky-night2.webp'
+  night:  '/images/sky-night.webp'
 };
 const ICONS = {dawn:'\ud83c\udf04',day:'\u2600\ufe0f',golden:'\ud83c\udf07',dusk:'\ud83c\udf0c',night:'\ud83c\udf19'};
 const CYCLE = ['dawn','day','golden','dusk','night', null];   // null = LIVE SKY
@@ -321,13 +321,16 @@ function spawnBird(){
   return { x: dir>0 ? rnd(-W*0.2,-10) : rnd(W+10,W*1.2),
            y: rnd(H*0.12,H*0.42), s: rnd(7,12)*DPR, v: dir*rnd(.25,.5)*DPR,
            dir, ph: Math.random()*6.28, fr: rnd(.18,.26) }; }
-function initFx(){
+function sizeFx(){
   W = fx.width = innerWidth*DPR; H = fx.height = innerHeight*DPR;
   fx.style.width = innerWidth+'px'; fx.style.height = innerHeight+'px';
+}
+function seedFx(){
   stars  = Array.from({length:46},()=>({x:Math.random()*W,y:Math.random()*H*0.62,r:rnd(.5,1.5)*DPR,p:Math.random()*6.28,s:rnd(.6,1.8)}));
   motes  = Array.from({length:16},()=>({x:Math.random()*W,y:Math.random()*H,r:rnd(.6,1.9)*DPR,vx:rnd(-.06,.06)*DPR,vy:rnd(-.16,-.04)*DPR,a:rnd(.05,.18)}));
   birds  = Array.from({length:2}, spawnBird);
 }
+function initFx(){ sizeFx(); seedFx(); }
 const starsOn = ()=> currentState==='night'?1 : currentState==='dusk'?.8 : 0;
 const birdsOn = ()=> currentState==='day'?1 : currentState==='golden'?.85 : 0;
 
@@ -399,7 +402,15 @@ function drawStatic(){
   }
 }
 function startFx(){ initFx(); reduceMotion ? drawStatic() : requestAnimationFrame(drawFx); }
-addEventListener('resize', ()=>{ initFx(); if(reduceMotion) drawStatic(); });
+let lastFxW = innerWidth;
+addEventListener('resize', ()=>{
+  sizeFx();                                  // keep the canvas matched to the viewport
+  if(innerWidth !== lastFxW){                // reshuffle only on a real width change,
+    lastFxW = innerWidth;                    // not the address-bar height changes during scroll
+    seedFx();
+  }
+  if(reduceMotion) drawStatic();
+});
 
 /* ---- paint sky layers ---- */
 function paintSky(state){
