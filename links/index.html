@@ -89,7 +89,7 @@ h1{ font-family:'Abril Fatface',serif; font-weight:400; text-align:center;
   border-radius:8px; box-shadow:0 14px 34px rgba(0,0,0,.32); object-fit:cover;
   transition:transform .5s cubic-bezier(.22,.61,.36,1); }
 .vinyl{
-  position:absolute; z-index:1; top:3%; left:0; width:94%; aspect-ratio:1; border-radius:50%;
+  position:absolute; z-index:1; top:3%; left:3%; width:94%; aspect-ratio:1; border-radius:50%;
   background:
     radial-gradient(circle at 50% 50%, #1c1c20 0 17%, transparent 17.5%),
     repeating-radial-gradient(circle at 50% 50%, #101013 0 1.4%, #1f1f24 1.4% 2.2%);
@@ -102,16 +102,17 @@ h1{ font-family:'Abril Fatface',serif; font-weight:400; text-align:center;
   background:radial-gradient(circle,#FFFDF6 0 9%, var(--cobalt) 9% 100%);
   border:2px solid rgba(255,255,255,.25); }
 .sleeve:hover .vinyl, .sleeve:focus-visible .vinyl{transform:translateX(30%) rotate(40deg)}
-/* single slide-out position — same target for click-open and keyboard focus */
-.music-card.open .vinyl,
-.sleeve:focus-visible .vinyl{ transform:translateX(25%) }
-.music-card.open .cover,
-.sleeve:focus-visible .cover{ transform:translateX(-20%) }
+/* OPEN (tap/click) — on touch this is the ONLY trigger, so toggling .open
+   reliably slides out AND back, with nothing left holding it open */
+.music-card.open .vinyl{ transform:translateX(22%) }
+.music-card.open .cover{ transform:translateX(-21%) }
 
-/* hover preview only on devices with a real pointer (prevents sticky hover keeping it open on mobile) */
+/* hover + keyboard-focus preview only where a real pointer exists */
 @media (hover:hover){
-  .sleeve:hover .vinyl{ transform:translateX(25%) }
-  .sleeve:hover .cover{ transform:translateX(-20%) }
+  .sleeve:hover .vinyl,
+  .sleeve:focus-visible .vinyl{ transform:translateX(22%) }
+  .sleeve:hover .cover,
+  .sleeve:focus-visible .cover{ transform:translateX(-21%) }
 }
 .music-meta{text-align:center}
 .music-title{font-family:'Abril Fatface',serif;font-size:21px}
