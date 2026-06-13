@@ -735,7 +735,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
           <div class="stamp-perf" style="position:relative">
             <svg class="cancel-mark" viewBox="0 0 150 60"><circle cx="30" cy="30" r="22" fill="none" stroke="#26304E" stroke-width="2"/><path d="M55 18 Q 85 8 115 18 T 175 18 M55 32 Q 85 22 115 32 T 175 32 M55 46 Q 85 36 115 46 T 175 46" fill="none" stroke="#26304E" stroke-width="2"/></svg>
             <div class="stamp-inner">
-              <img src="images/portrait.webp" alt="Portrait of Thomas Lai" loading="lazy" onerror="this.parentElement.style.aspectRatio='3/4'">
+              <img src="images/hero.webp" alt="Thomas Lai" loading="lazy" onerror="this.parentElement.style.aspectRatio='3/4'">
               <span class="stamp-denom">2026 · Jun · 1st</span>
               <span class="stamp-country">Montréal · Canada</span>
             </div>
@@ -795,12 +795,13 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
           </div>
         </div>
         <ul class="asset-list">
-          <li><div><div class="a-name">Hero Shot</div><div class="a-meta">JPEG · landscape</div></div><a href="images/hero.webp" target="_blank" rel="noopener">Download ↓</a></li>
-          <li><div><div class="a-name">Portrait</div><div class="a-meta">JPEG · portrait</div></div><a href="images/portrait.webp" target="_blank" rel="noopener">Download ↓</a></li>
-          <li><div><div class="a-name">Live photo · La Sotterenea, March 2026</div><div class="a-meta">JPEG · portrait · 1 of 2</div></div><a href="images/live-1.webp" target="_blank" rel="noopener">Download ↓</a></li>
-          <li><div><div class="a-name">Live photo · La Sotterenea, March 2026</div><div class="a-meta">JPEG · landscape · 2 of 2</div></div><a href="images/live-2.webp" target="_blank" rel="noopener">Download ↓</a></li>
-          <li><div><div class="a-name">“Ferris Wheel Romance” cover art</div><div class="a-meta">JPEG · square</div></div><a href="images/fwrcoverhq.webp" target="_blank" rel="noopener">Download ↓</a></li>
-          <li><div><div class="a-name">“Ferris Wheel Romance” alternative cover art</div><div class="a-meta">JPEG · square</div></div><a href="images/fwr_alt_improved.webp" target="_blank" rel="noopener">Download ↓</a></li>
+          <li><div><div class="a-name">One-sheet</div><div class="a-meta">PDF · press summary</div></div><a href="images/ThomasLai_OneSheet.pdf" target="_blank" rel="noopener">Download ↓</a></li>
+          <li><div><div class="a-name">Hero Shot</div><div class="a-meta">JPEG · landscape</div></div><a href="images/hero.jpeg" target="_blank" rel="noopener">Download ↓</a></li>
+          <li><div><div class="a-name">Portrait</div><div class="a-meta">JPEG · portrait</div></div><a href="images/portrait.jpeg" target="_blank" rel="noopener">Download ↓</a></li>
+          <li><div><div class="a-name">Live photo · La Sotterenea, March 2026</div><div class="a-meta">JPEG · portrait · 1 of 2</div></div><a href="images/live-1.jpg" target="_blank" rel="noopener">Download ↓</a></li>
+          <li><div><div class="a-name">Live photo · La Sotterenea, March 2026</div><div class="a-meta">JPEG · landscape · 2 of 2</div></div><a href="images/live-2.jpg" target="_blank" rel="noopener">Download ↓</a></li>
+          <li><div><div class="a-name">“Ferris Wheel Romance” cover art</div><div class="a-meta">JPEG · square</div></div><a href="images/fwrcoverhq.jpg" target="_blank" rel="noopener">Download ↓</a></li>
+          <li><div><div class="a-name">“Ferris Wheel Romance” alternative cover art</div><div class="a-meta">JPEG · square</div></div><a href="images/fwr_alt_improved.jpeg" target="_blank" rel="noopener">Download ↓</a></li>
           <li><div><div class="a-name">Audio — WAV, instrumental, a cappella</div><div class="a-meta">On request</div></div><a href="mailto:thomaslaimusic@gmail.com?subject=Audio%20assets%20request">Request →</a></li>
         </ul>
       </div>
@@ -822,11 +823,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
         <div class="foot-brand">Thomas Lai</div>
       </div>
       <div class="foot-links">
-        <a href="https://open.spotify.com/artist/6gC0R5KWF9lozxrgVAZoSA?si=159c5bb218e24665" target="_blank" rel="noopener">Spotify</a>
-        <a href="https://music.apple.com/us/artist/thomas-lai/1889020506" target="_blank" rel="noopener">Apple Music</a>
-        <a href="https://www.youtube.com/@thomaslaimusic" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://www.instagram.com/thomaslaimusic" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.tiktok.com/@thomaslaimusic" target="_blank" rel="noopener">TikTok</a>
+        <a href="/links/">Links</a>
         <a href="https://thomaslaimusic.beehiiv.com" target="_blank" rel="noopener">Newsletter</a>
         <a href="#/press">Press</a>
         <a href="mailto:thomaslaimusic@gmail.com">Contact</a>
@@ -854,14 +851,11 @@ const SKIES = {
   night: ['#040A1E','#0B1733','#13233F']
 };
 const SKY_IMG = {
-  /* OPTIONAL real-photo skies, one per time-of-day state. Leave a state out
-     (or the whole map empty) and that state simply uses its gradient alone.
-     To switch a state to a photo, uncomment its line and add the file:
-       dawn:   'images/sky-dawn.webp',
-       day:    'images/sky-day.webp',
-       golden: 'images/sky-golden.webp',
-       dusk:   'images/sky-dusk.webp',
-       night:  'images/sky-night.webp'  */
+  dawn:   'images/sky-dawn.webp',
+  day:    'images/sky-day.webp',
+  golden: 'images/sky-golden.webp',
+  dusk:   'images/sky-dusk.webp',
+  night:  'images/sky-night.webp'
 };
 const ICONS = {dawn:'🌄',day:'☀️',golden:'🌇',dusk:'🌌',night:'🌙'};
 function stateForMinutes(m){
