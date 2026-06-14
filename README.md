@@ -2,7 +2,7 @@
 
 Welcome to the source code for **thomaslaimusic.com**, the official web presence of Thomas Lai, a theatrical maximalist pop artist from Montréal, Canada.
 
-**[→ Visit the live site](https://www.thomaslaimusic.com)**
+**→ Visit the live site[https://www.thomaslaimusic.com](https://www.thomaslaimusic.com)**
 
 ---
 
