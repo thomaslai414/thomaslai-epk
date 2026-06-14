@@ -1,4 +1,4 @@
-# Thomas Lai — Official Website
+# Thomas Lai Official Site
 
 Welcome to the source code for **thomaslaimusic.com**, the official web presence of Thomas Lai, a theatrical maximalist pop artist from Montréal, Canada.
 
@@ -282,7 +282,7 @@ Then open `http://localhost:8000`
 - **Design & Development**: Thomas Lai
 - **Creative Direction**: Theatrical maximalist pop aesthetic
 - **Debut Single**: "Ferris Wheel Romance" (April 17, 2026)
-- **Label**: Independent (CanCon Registry: MALP)
+- **Label**: Independent (CanCon: MALP)
 
 ---
 
@@ -290,7 +290,7 @@ Then open `http://localhost:8000`
 
 - **Email**: thomaslaimusic@gmail.com
 - **Instagram**: [@thomaslaimusic](https://instagram.com/thomaslaimusic)
-- **Newsletter**: [thomaslaimusic.beehiiv.com](https://thomaslaimusic.beehiiv.com)
+- **Newsletter**: [thomaslaimusic.beehiiv.com](https://thomaslaimusic/newsletter)
 - **Website**: [thomaslaimusic.com](https://thomaslaimusic.com)
 
 ---
