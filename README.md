@@ -1,247 +1,298 @@
 # Thomas Lai — Official Website
 
-Official website for Thomas Lai, a Taiwanese-Canadian theatrical, maximalist pop artist from Montréal. Features music, live performances, postcards, press materials, and an innovative dynamic sky system.
+Welcome to the source code for **thomaslaimusic.com**, the official web presence of Thomas Lai, a theatrical maximalist pop artist from Montréal, Canada.
 
-**Live:** [thomaslaimusic.com](https://www.thomaslaimusic.com)
+**[→ Visit the live site](https://www.thomaslaimusic.com)**
 
 ---
 
-## 🌅 Design System: "Open Sky"
+## Overview
 
-The site centers around a **living sky** that responds to your local time, creating a unique visual experience that evolves throughout the day. The sky shifts through five states — Dawn, Day, Golden Hour, Dusk, and Night — each with its own color palette and atmospheric effects.
+This is a **self-contained, single-page application** built with vanilla HTML, CSS, and JavaScript. No build tools, no frameworks, no dependencies—just clean, performant code that works in every modern browser.
 
-### Sky States
+The site centers around a **living sky** that reflects your local time of day, creating a dynamic, immersive visual experience. Beyond the sky, you'll find music streaming links, live performance galleries, a digital postcard collection, and a full electronic press kit.
 
-- **Dawn** (5:00–7:30 AM): Soft pastels, glacial blues with warm accents
-- **Day** (7:30 AM–5:00 PM): Bright, fresh sky blues and whites
-- **Golden Hour** (5:00–6:30 PM): Warm, nostalgic palette (identical to dawn visually)
-- **Dusk** (6:30–9:30 PM): Deep purples and teals, ferris wheel bulbs illuminate
-- **Night** (9:30 PM–5:00 AM): Navy and deep indigo with aurora effects
+---
 
-### Interactive Elements
+## ✨ Key Features
 
-- **Living Canvas**: Dynamic background that updates based on your system time or manual control
-- **Atmospheric Effects**: 
-  - Birds that react to cursor movement
-  - Windborne motes that drift naturally
-  - Twinkling stars visible at night
-  - Shooting stars after dark
-- **Paper Design**: Postcards and UI elements maintain consistent paper aesthetic across all sky states
-- **Sky Control**: Users can manually override time or sync to live local time
+### 🌅 **Living Sky System**
+
+The background updates automatically based on your local time, cycling through five states:
+
+| State | Time | Palette | Vibe |
+|-------|------|---------|------|
+| **Dawn** | 5:00–7:30 AM | Glacial blues + warm pastels | Soft, awakening |
+| **Day** | 7:30 AM–5:00 PM | Fresh sky blues + whites | Bright, energetic |
+| **Golden Hour** | 5:00–6:30 PM | Warm, nostalgic tones | Reflective glow |
+| **Dusk** | 6:30–9:30 PM | Deep purples + teals | Theatrical twilight |
+| **Night** | 9:30 PM–5:00 AM | Navy + deep indigo | Starlit, mysterious |
+
+**Interactive Elements:**
+- Twinkling stars (night only)
+- Shooting stars (dusk & night)
+- Animated birds (day only)
+- Floating motes (all states)
+- Tap the "LIVE SKY" button to preview any state manually
+- Works with `prefers-reduced-motion` for accessibility
+
+### 🎵 **Music Hub**
+
+- **Debut Single**: "Ferris Wheel Romance" (April 17, 2026)
+- Streaming buttons for 8+ platforms (Spotify, Apple Music, TIDAL, YouTube, etc.)
+- Embedded audio player
+- Full credits and production details
+
+### 📮 **Newsletter & Postcards**
+
+- beehiiv-powered email signup
+- Free digital postcard collection tied to the album cycle
+- No spam, unsubscribe anytime
+
+### 🎬 **Performance Gallery**
+
+- Live photos and stage recordings
+- Audio snippets from recent performances
+- Tour date announcements
+
+### 🎁 **Shop**
+
+- Digital postcard previews
+- Email signup incentivized by exclusive artwork
+
+### 🗂️ **Press Kit (EPK)**
+
+- One-sheets
+- High-res photos
+- Audio assets (WAV on request)
+- Media contact info
+
+### 🔗 **Link Hub** (`/links/`)
+
+A lightweight alternative landing page perfect for:
+- Social media bios
+- QR codes
+- All platforms in one minimal page
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-index.html              # Main SPA: Home, Music, Live, Shop, About, Press
-links/index.html        # Streamlined link hub (alternative entry point)
-images/                 # Asset directory (photos, sky gradients, covers, etc.)
-CNAME                   # Custom domain configuration (thomaslaimusic.com)
+index.html              # Main SPA (single-page app)
+links/index.html        # Lightweight link hub alternative
+images/                 # Assets (photos, sky backgrounds, album art, etc.)
+CNAME                   # Custom domain file (thomaslaimusic.com)
 README.md               # This file
 ```
 
 ### Main Site (`index.html`)
 
-A single-page application (~72KB) with all content, styles, and scripts embedded. Includes:
+A ~72 KB fully self-contained HTML file with:
+- All CSS (inline `<style>`)
+- All JavaScript (inline `<script>`)
+- Semantic structure
+- Responsive mobile-first layout
+- Smooth client-side routing to 6 pages
 
-- **Navigation**: Smooth client-side routing to 6 main pages
-- **Home**: Hero section with ferris wheel animation, announcements, newsletter signup
-- **Music**: Debut single "Ferris Wheel Romance" with streaming links & embedded player
-- **Live**: Performance gallery, audio player, tour dates
-- **Shop**: Free digital postcard collection with email signup
-- **About**: Artist bio, influences, story
-- **Press**: Electronic Press Kit (EPK), one-sheets, photos, audio assets
-
-**Features:**
-- Fully responsive (mobile-first, fluid typography with `clamp()`)
-- Accessible (semantic HTML, focus states, ARIA labels)
-- Modern CSS Grid & Flexbox layouts
-- Canvas-based sky rendering with interactive controls
-- CSS custom properties for easy customization
-- **Cart system** for postcards (visual feedback, toast notifications)
+**Pages:**
+1. **Home** — Hero with ferris wheel animation, announcements, newsletter
+2. **Music** — Streaming links, player, credits
+3. **Live** — Performance photos & audio
+4. **Shop** — Digital postcards
+5. **About** — Artist bio and story
+6. **Press** — EPK, one-sheets, assets
 
 ### Links Hub (`links/index.html`)
 
-A lightweight alternative landing page (~29KB) perfect for:
-- Social media bio links
-- QR code destinations
-- Streamlined access to all platforms in one place
-
-**Features:**
-- Collapsible "vinyl record" streaming service card
-- Social profile links (Spotify, Apple Music, YouTube, Instagram, TikTok)
-- Email newsletter signup
-- Same sky system as main site
-- Minimal, touch-friendly design
+A ~29 KB streamlined alternative with:
+- All streaming service links
+- Social media buttons
+- Newsletter signup
+- Same living sky as main site
+- Touch-friendly design
 
 ---
 
-## 🎨 Design System
+## 🎨 Design
 
 ### Typography
 
-- **Display**: Abril Fatface (serif) — headlines, hero text
-- **Body**: Hanken Grotesk (sans-serif) — body copy, UI
-- **Labels**: Space Mono (monospace) — tags, metadata
-- **Handwriting**: Caveat (cursive) — postcards, signatures
+| Use | Font | Weight | CSS Variable |
+|-----|------|--------|---|
+| Headlines, hero | Abril Fatface | 400 | `--display` |
+| Body text, UI | Hanken Grotesk | 300–700 | `--body` |
+| Labels, metadata | Space Mono | 400, 700 | `--mono` |
+| Postcards, signatures | Caveat | 500, 600 | `--hand` |
+
+All fonts are loaded from Google Fonts with preconnect hints for performance.
 
 ### Color Palette
 
-**Core Colors:**
-- `--cobalt: #2E63D8` — Primary action, buttons
+**Static Colors:**
+- `--cobalt: #2E63D8` — Primary actions, buttons
 - `--blue: #2C5BA8` — Postal ink, secondary accents
 - `--teal: #57C7E3` — Glacial accent
-- `--gold: #F2B64B` — Ferris wheel bulbs
-
-**Paper Colors:**
-- `--paper: #FFFDF6` — Off-white
-- `--cream: #FFF6E8` — Warm cream
-- `--kraft: #EFE3CB` — Kraft paper brown
+- `--gold: #F2B64B` — Ferris wheel bulbs, highlights
+- `--paper: #FFFDF6`, `--cream: #FFF6E8`, `--kraft: #EFE3CB` — Paper backgrounds
 
 **Dynamic (changes per sky state):**
-- `--ink` — Text color (adapts from dark to light across states)
+- `--ink` — Text color (dark or light depending on sky)
 - `--ink-dim` — Secondary text
-- `--chrome` — Glass/frosted effect (backdrop blur)
-- `--accent-soft` — Context-aware accent color
+- `--accent-soft` — Context-aware accent
+- `--chrome`, `--chrome-line` — Glassmorphic effects
+- `--shadow` — Adaptive drop shadow
 
 ---
 
-## ✨ Key Features
-
-### Music Integration
-
-- **Streaming Buttons**: One-click access to Spotify, Apple Music, YouTube, TIDAL, Pandora, Boomplay, iTunes, Yandex Music
-- **Audio Player**: Embedded Spotify playlist
-- **WAV/A Cappella**: Available on request for press/sync
-
-### Community & Engagement
-
-- **Newsletter**: beehiiv embed for free postcard collection
-- **Postcards**: Digital collection with lore tied to album cycle
-- **Email Signup**: Incentivized with "collectable digital postcards"
-
-### Accessibility
-
-- Semantic HTML structure
-- Focus-visible outlines on all interactive elements
-- Sufficient color contrast across all sky states
-- Proper heading hierarchy (h1 → h6)
-- ARIA labels for buttons, landmarks
-- Works with `prefers-reduced-motion`
+## ⚡ Performance & Accessibility
 
 ### Performance
 
-- Self-contained HTML (no external dependencies except fonts & embeds)
-- WebP images with JPEG fallbacks
-- Lazy loading for images
-- Smooth scroll behavior
-- Optimized Canvas API for sky effects
+- **Zero dependencies** — no npm, no build step, no JavaScript framework
+- **Self-contained** — all CSS and JS inline (single HTTP request)
+- **WebP + fallbacks** — modern image format with JPEG backups
+- **Lazy loading** — images load on demand
+- **Canvas optimization** — efficient sky rendering at 60 FPS
+- **File size** — main site ~72 KB, links hub ~29 KB
+
+### Accessibility
+
+- Semantic HTML5 structure
+- Focus-visible outlines on all interactive elements
+- Sufficient color contrast across all sky states
+- Proper heading hierarchy (h1 → h6)
+- ARIA labels for buttons and landmarks
+- `prefers-reduced-motion` support (disables animations)
+- Mobile-friendly touch targets
 
 ---
 
-## 🎯 Content Pages
+## 🔧 How to Customize
 
-| Page | Purpose | Key Elements |
-|------|---------|---|
-| **Home** | Landing & announcements | Hero, ferris wheel SVG, dispatch cards, newsletter signup |
-| **Music** | Single release hub | Album art, credits, streaming buttons, embedded player |
-| **Live** | Performance showcase | Stage photos, audio recordings, tour dates |
-| **Shop** | Postcard collection | Digital postcard previews, email signup CTA |
-| **About** | Artist bio | Portrait, bio text, influences, personal story |
-| **Press** | Media kit & EPK | One-sheets, photos, audio assets, press contact |
+### Change Sky Colors
+
+Edit the CSS variables in the `<style>` block (around line 12):
+
+```css
+:root {
+  --cobalt: #2E63D8;
+  --blue: #2C5BA8;
+  --teal: #57C7E3;
+  --gold: #F2B64B;
+  /* ... etc */
+}
+```
+
+### Modify Sky States & Timing
+
+In the `<script>` block, update the `SKIES` and `SKY_IMG` objects:
+
+```javascript
+const SKIES = {
+  dawn:   ['#8FA8E8', '#D9A8C8', '#FFE6D6'],
+  day:    ['#5FA9EE', '#9FCFF6', '#EAF6FF'],
+  golden: ['#8FA8E8', '#D9A8C8', '#FFE6D6'],
+  dusk:   ['#262B6E', '#4A5AA8', '#3D7A9E'],
+  night:  ['#040A1E', '#0B1733', '#13233F']
+};
+```
+
+Adjust the `stateForMinutes(m)` function to change time boundaries.
+
+### Update Streaming Links
+
+In `links/index.html`, find the `FWR_LINKS` object and update URLs:
+
+```javascript
+const FWR_LINKS = {
+  spotify: 'https://open.spotify.com/...',
+  apple: 'https://music.apple.com/...',
+  // ... etc
+};
+```
+
+### Add or Remove Pages
+
+1. Add a new `<section class="page" data-page="your-page">` in the HTML
+2. Add a link in the navigation with `data-goto="your-page"`
+3. Style with CSS as needed
 
 ---
 
 ## 🌐 Browser Support
 
-- Modern ES6+ JavaScript (no transpilation)
+**Requires:**
+- ES6+ JavaScript (no transpilation)
 - CSS Grid & Flexbox
 - CSS Custom Properties (variables)
-- Canvas API for sky rendering
-- WebP with fallbacks
-- Mobile: iOS Safari 13+, Chrome Android
+- Canvas API
+- WebP image format (with JPEG fallbacks)
 
-**Recommended:** Latest 2 versions of Chrome, Safari, Firefox, Edge
-
----
-
-## 🔧 Customization
-
-### Changing Sky Colors
-
-Edit the `:root` CSS variables in `index.html` (lines 12–31):
-
-```css
-:root{
-  --cobalt:#2E63D8;       /* primary action */
-  --blue:#2C5BA8;         /* postal ink blue */
-  --teal:#57C7E3;         /* glacial teal */
-  --gold:#F2B64B;         /* ferris wheel bulbs */
-  /* ... etc */
-}
-```
-
-### Modifying Sky States
-
-Update the `SKIES` and `SKY_IMG` objects in the JavaScript section to adjust colors and background images per time of day.
-
-### Adding New Pages
-
-All pages are defined as `.page` sections within `main`. Add a new section and register it in the routing logic (`data-page` attribute and nav link).
-
-### Updating Streaming Links
-
-In `links/index.html`, edit the `FWR_LINKS` object (lines 246–255) with your streaming URLs:
-
-```javascript
-const FWR_LINKS = {
-  spotify : 'https://...',
-  apple   : 'https://...',
-  // ...
-};
-```
+**Tested & Recommended:**
+- Chrome/Edge: Latest 2 versions
+- Firefox: Latest 2 versions
+- Safari/iOS Safari: 13+
+- Mobile browsers: Android Chrome, iOS Safari
 
 ---
 
-## 📊 Analytics & Third-Party
+## 📊 Technical Stack
 
-- **Newsletter**: beehiiv embed (https://beehiiv.com)
-- **Music**: Spotify & Apple Music embeds
-- **Analytics**: None currently (can be added via GTM or similar)
+| Layer | Technology |
+|-------|-----------|
+| **Markup** | HTML5 semantic |
+| **Styling** | CSS3 (Grid, Flexbox, custom properties, backdrop-filter) |
+| **Script** | Vanilla JavaScript (ES6+, Canvas API) |
+| **Fonts** | Google Fonts (preconnect for performance) |
+| **Images** | WebP + JPEG fallbacks, lazy loading |
+| **Embeds** | beehiiv (newsletter), Spotify (player) |
+| **Deployment** | GitHub Pages + custom domain (CNAME) |
 
 ---
 
 ## 🚀 Deployment
 
-The site is deployed via GitHub Pages. The `CNAME` file points to a custom domain (`thomaslaimusic.com`).
+The site is hosted on **GitHub Pages** and points to a custom domain via the `CNAME` file.
 
-**To deploy locally or redeploy:**
+**To serve locally:**
 
-1. Simply serve `index.html` (no build step needed)
-2. All assets must be in the `/images/` directory
-3. `/links/index.html` serves independently at `/links/`
+```bash
+# Option 1: Python
+python3 -m http.server 8000
+
+# Option 2: Node (http-server)
+npx http-server
+
+# Option 3: Ruby
+ruby -run -ehttpd . -p8000
+```
+
+Then open `http://localhost:8000`
+
+**To deploy:**
+1. Push changes to the `main` branch
+2. GitHub Pages automatically builds and deploys
+3. Changes are live at thomaslaimusic.com in ~60 seconds
 
 ---
 
-## 📝 Credits & Copyright
+## 📝 Credits
 
 - **Design & Development**: Thomas Lai
-- **Art Direction**: Theatrical, maximalist pop aesthetic
+- **Creative Direction**: Theatrical maximalist pop aesthetic
 - **Debut Single**: "Ferris Wheel Romance" (April 17, 2026)
-- **Label**: Independent (CanCon: MALP)
-
-All content and design are proprietary. © 2026 Thomas Lai · Montréal · All rights reserved.
+- **Label**: Independent (CanCon Registry: MALP)
 
 ---
 
 ## 📮 Contact
 
-- **Press & Inquiries**: [thomaslaimusic@gmail.com](mailto:thomaslaimusic@gmail.com)
+- **Email**: thomaslaimusic@gmail.com
+- **Instagram**: [@thomaslaimusic](https://instagram.com/thomaslaimusic)
 - **Newsletter**: [thomaslaimusic.beehiiv.com](https://thomaslaimusic.beehiiv.com)
-- **Social**: [@thomaslaimusic](https://instagram.com/thomaslaimusic)
+- **Website**: [thomaslaimusic.com](https://thomaslaimusic.com)
 
 ---
 
-**More about Thomas Lai:**  
-Theatrical, maximalist pop from Montréal. Stream music, explore performances, discover free postcards, and connect at [thomaslaimusic.com](https://www.thomaslaimusic.com).
+**Thomas Lai** is a theatrical, maximalist pop artist from Montréal. Explore his music, discover postcards, and experience the living sky at [thomaslaimusic.com](https://thomaslaimusic.com).
