@@ -83,7 +83,7 @@ body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
 /* ---- the postcard ---- */
 .postcard{position:relative;background:var(--cream);color:var(--paper-ink);
   border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
-  padding:30px 28px 26px;transition:box-shadow 1.2s ease}
+  padding:30px 28px 26px;transition:box-shadow 1.2s ease; margin-top: 32px;}
 .postcard .airmail{position:absolute;top:0;left:0;right:0;height:8px;
   background:repeating-linear-gradient(-45deg,
     var(--cobalt) 0 8px, transparent 8px 16px, var(--ice) 16px 24px, transparent 24px 32px);}
@@ -117,7 +117,7 @@ body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
 .deliver{margin-top:22px;padding-top:20px;border-top:1px dashed #D8C9A5;text-align:center}
 .deliver-label{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.26em;
   text-transform:uppercase;color:#8A7E5E;margin-bottom:12px}
-.bh-embed{min-height:120px;max-width:440px;margin:0 auto}
+.bh-embed{min-height:120px;max-width:440px;margin:0 auto;align-items: center;}
 .bh-embed iframe{max-width:100%!important;width:100%!important}
 .fallback-link{display:inline-flex;align-items:center;gap:8px;background:var(--cobalt);color:#fff;
   border-radius:999px;padding:13px 24px;font-weight:600;font-family:var(--body)}
@@ -188,7 +188,7 @@ body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
         <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="096f4275-da4a-459e-9260-74dd30d7cacb"></script>
         <noscript><a class="fallback-link" href="https://thomaslaimusic.beehiiv.com/subscribe" target="_blank" rel="noopener">Open the subscribe form ↗</a></noscript>
       </div>
-      <p class="fineprint">Unsubscribe anytime</p>
+      <p class="fineprint">Powered by beehiiv · Unsubscribe anytime</p>
     </div>
   </section>
 
