@@ -137,6 +137,9 @@ body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
   margin-top:16px;opacity:.8;transition:color 1.2s ease}
 .credit a{border-bottom:1px dotted var(--ink-dim)}
 
+@media (min-width:521px){
+  body{display:flex; flex-direction:column; justify-content:center}
+}
 @media (max-width:520px){
   body{min-height:calc(100vh + 64px)}
   .foot{padding-bottom:40px}
