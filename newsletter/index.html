@@ -380,6 +380,14 @@ setInterval(syncSky, 60000);
 $('yr').textContent = new Date().getFullYear();
 startFx();
 syncSky();
+
+/* best-effort: when arriving with the browser toolbar collapsed (e.g. from main),
+   nudge the scroll so the browser re-evaluates and tends to re-show its bar.
+   Browsers block direct control of their own chrome, so this is not guaranteed —
+   iOS WebKit in particular may ignore programmatic scrolls. */
+addEventListener('pageshow', ()=>{
+  if(window.scrollY===0){ window.scrollTo(0,1); requestAnimationFrame(()=>window.scrollTo(0,0)); }
+});
 </script>
 </body>
 </html>
