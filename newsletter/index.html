@@ -59,11 +59,11 @@ button{font-family:inherit;cursor:pointer}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent-soft);outline-offset:3px;border-radius:6px}
 
 /* ---- the living sky (photo layers over gradient + ambient canvas) ---- */
-.sky-stage{position:fixed;top:0;left:0;width:100%;height:calc(100vh + 140px);z-index:-3;background:#0B1733;overflow:hidden}
+.sky-stage{position:fixed;inset:0;z-index:-3;background:#0B1733;overflow:hidden}
 .sky-layer{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;
   background-size:cover;background-position:center bottom;background-repeat:no-repeat}
 .sky-layer.on{opacity:1}
-.sky-scrim{position:fixed;top:0;left:0;width:100%;height:calc(100vh + 140px);z-index:-2;pointer-events:none;
+.sky-scrim{position:fixed;inset:0;z-index:-2;pointer-events:none;
   background:linear-gradient(180deg, rgba(8,16,40,.04) 0%, rgba(8,16,40,.10) 100%);}
 body[data-sky="night"] .sky-scrim,body[data-sky="dusk"] .sky-scrim{
   background:linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.28) 100%);}
@@ -362,7 +362,6 @@ function paintSky(state){
   next.classList.add('on'); prev.classList.remove('on');
   activeLayer = activeLayer==='A' ? 'B' : 'A';
   document.body.dataset.sky = state;
-  document.body.style.backgroundColor = c;   // bottom sky color: blends any toolbar gap into the sky
   $('skyPill').textContent = `${ICONS[state]} ${preview ? 'PREVIEW \u00b7 '+state.toUpperCase() : 'LIVE SKY'}`;
   if(reduceMotion) drawStatic();
 }
@@ -381,14 +380,6 @@ setInterval(syncSky, 60000);
 $('yr').textContent = new Date().getFullYear();
 startFx();
 syncSky();
-
-/* best-effort: when arriving with the browser toolbar collapsed (e.g. from main),
-   nudge the scroll so the browser re-evaluates and tends to re-show its bar.
-   Browsers block direct control of their own chrome, so this is not guaranteed —
-   iOS WebKit in particular may ignore programmatic scrolls. */
-addEventListener('pageshow', ()=>{
-  if(window.scrollY===0){ window.scrollTo(0,1); requestAnimationFrame(()=>window.scrollTo(0,0)); }
-});
 </script>
 </body>
 </html>
